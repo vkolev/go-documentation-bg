@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Въведение в програмния език Go &mdash; Въведение в Go 1.0a documentation</title>
+    <title>Въведение в програмния език Go &mdash; Въведение в Go 1.0a документация</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -24,24 +24,25 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Въведение в Go 1.0a documentation" href="index.html" />
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="Въведение в Go 1.0a документация" href="index.html" />
     <link rel="next" title="Ефективен Go" href="effective_go.html" />
     <link rel="prev" title="Въведение в Go" href="index.html" /> 
   </head>
   <body>
     <div class="related">
-      <h3>Navigation</h3>
+      <h3>Навигация</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
+          <a href="genindex.html" title="Общ индекс"
+             accesskey="I">индекс</a></li>
         <li class="right" >
           <a href="effective_go.html" title="Ефективен Go"
-             accesskey="N">next</a> |</li>
+             accesskey="N">напред</a> |</li>
         <li class="right" >
           <a href="index.html" title="Въведение в Go"
-             accesskey="P">previous</a> |</li>
-        <li><a href="index.html">Въведение в Go 1.0a documentation</a> &raquo;</li> 
+             accesskey="P">назад</a> |</li>
+        <li><a href="index.html">Въведение в Go 1.0a документация</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -51,10 +52,10 @@
           <div class="body">
             
   <div class="section" id="go">
-<h1>Въведение в програмния език Go<a class="headerlink" href="#go" title="Permalink to this headline">¶</a></h1>
+<h1>Въведение в програмния език Go<a class="headerlink" href="#go" title="Постоянна връзка до това заглавие">¶</a></h1>
 <div class="section" id="id1">
-<h2>Предговор<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>Този документ е урок представящ основите на програмния език Go, предвиден за програмисти, запознати с C или C++.
+<h2>Предговор<a class="headerlink" href="#id1" title="Постоянна връзка до това заглавие">¶</a></h2>
+<p>Този документ е урок, представящ основите на програмния език Go, предвиден за програмисти, запознати с C или C++.
 Това не е подробен наръчник за езика; до този момент най-близкия документ до това е <a class="reference external" href="http://weekly.golang.org/doc/go_spec.html">спецификацията на езика</a>.
 След като прочетете този урок, можете да продължите с <a class="reference external" href="http://weekly.golang.org/doc/effective_go.html">Ефективен Go</a>, който навлиза по-дълбоко в
 това как се използва езика и говори за стил и идиоми при програмирането с Go. Съществува и интерактивна интродукция в Go, наречена <a class="reference external" href="http://tour.golang.org/">Разходка в Go</a>.</p>
@@ -62,7 +63,7 @@
 работят (в момента на писане) и са качени в хранилището в директория <a class="reference external" href="http://weekly.golang.org/doc/progs">/doc/progs/</a>.</p>
 </div>
 <div class="section" id="id5">
-<h2>Здравей свят<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<h2>Здравей свят<a class="headerlink" href="#id5" title="Постоянна връзка до това заглавие">¶</a></h2>
 <p>Нека започнем по обичайния начин:</p>
 <div class="highlight-go"><div class="highlight"><pre><span class="k">package</span> <span class="n">main</span>
 
@@ -81,7 +82,7 @@
 <p>По-късно ще споменем повече относно принтирането.</p>
 </div>
 <div class="section" id="id6">
-<h2>Точки и запетаи<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<h2>Точки и запетаи<a class="headerlink" href="#id6" title="Постоянна връзка до това заглавие">¶</a></h2>
 <p>Може би сте забелязали, че в нашата програма няма точки и запетаи. В Go кода, единственото място в което вероятно ще използвате точки и запетаи е при
 разграничаването на клаузите във <tt class="docutils literal"><span class="pre">for</span></tt> цикъл и подобни; не са необходими след всяка заявка.</p>
 <p>Всъщност това, което се случва е, че формалният език използва точки и запетаи, както в C или Java, но те се добавят автоматично в края на всеки ред, който
@@ -94,7 +95,7 @@
 налага този стил на къдрави скови до известна степен.</p>
 </div>
 <div class="section" id="id7">
-<h2>Компилиране<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<h2>Компилиране<a class="headerlink" href="#id7" title="Постоянна връзка до това заглавие">¶</a></h2>
 <p>Go е компилируем език. В момента същствуват два компилатора: <tt class="docutils literal"><span class="pre">Gccgo</span></tt> е Go компилатор, който използва за основа GCC. Има и пакет от компилатори с различни (и странни)
 имена за всяка архитектура: <tt class="docutils literal"><span class="pre">6g</span></tt> за 64-bit x86, 8g за 32-bit x86 и други. Тези компилатори работят значително по-бързо, но генерират по-малко ефикасен код, в
 сравнение с <tt class="docutils literal"><span class="pre">gccgo</span></tt>. В момента на писане (края на 2009), те имат и по-стабилна run-time система, въпреки, че gccgo наваксва.</p>
@@ -115,7 +116,7 @@
 </div>
 </div>
 <div class="section" id="echo">
-<h2>Echo<a class="headerlink" href="#echo" title="Permalink to this headline">¶</a></h2>
+<h2>Echo<a class="headerlink" href="#echo" title="Постоянна връзка до това заглавие">¶</a></h2>
 <p>Подред, това е версия на Unix инструмента <tt class="docutils literal"><span class="pre">echo(1)</span></tt>:</p>
 <div class="highlight-go"><div class="highlight"><pre><span class="k">package</span> <span class="n">main</span>
 
@@ -206,7 +207,7 @@
 достъп до аргументите в командния ред.</p>
 </div>
 <div class="section" id="id8">
-<h2>Антракт относно типове<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<h2>Антракт относно типове<a class="headerlink" href="#id8" title="Постоянна връзка до това заглавие">¶</a></h2>
 <p>Go има някои познати типове като <tt class="docutils literal"><span class="pre">int</span></tt> и <tt class="docutils literal"><span class="pre">uint</span></tt> (unsigned int), които представляват стойности от &#8220;посходящ&#8221; размер
 за машината. Също така дефинира и изрично-ограничени типове като <tt class="docutils literal"><span class="pre">int8</span></tt>, <tt class="docutils literal"><span class="pre">float64</span></tt> и т.н., плюс неподписани типове
 като <tt class="docutils literal"><span class="pre">uint</span></tt>, <tt class="docutils literal"><span class="pre">uint32</span></tt> и други. Това са различни типове, дори ако <tt class="docutils literal"><span class="pre">int</span></tt> и <tt class="docutils literal"><span class="pre">int32</span></tt> са с размер от 32 бита, те
@@ -305,20 +306,19 @@
 Виж <a class="reference internal" href="effective_go.html"><em>Ефективен Go</em></a> за повече примери.</p>
 </div>
 <div class="section" id="id9">
-<h2>Антракт относно алокация<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<h2>Антракт относно алокация<a class="headerlink" href="#id9" title="Постоянна връзка до това заглавие">¶</a></h2>
 <p>Повечето типове в Go са стойности. Ако имате <tt class="docutils literal"><span class="pre">int</span></tt> или <tt class="docutils literal"><span class="pre">struct</span></tt> или някакъв масив, предаването копира съдържанието
 на обекта. За да разпределите нова променлива, използвайте вградената функция <tt class="docutils literal"><span class="pre">new</span></tt>, която връща показател
 към разпределеното хранилище.</p>
-<div class="highlight-go"><div class="highlight"><pre><span class="k">type</span> <span class="n">T</span> <span class="k">struct</span> <span class="p">{</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="nb">int</span><span class="p">}</span>
-<span class="k">var</span> <span class="n">t</span> <span class="p">*</span><span class="n">T</span> <span class="p">=</span> <span class="nb">new</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
-</pre></div>
+<div class="highlight-go"><pre>type T struct { a, b int}
+var t \*T = new(T)</pre>
 </div>
 <p>или по-идиоматичното</p>
 <div class="highlight-go"><div class="highlight"><pre><span class="n">t</span> <span class="p">:=</span> <span class="nb">new</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Някои типове - карти, изрезки и канали (виж по-долу) - имат свързана семантика. Ако държите изрезка или карта и искате
-да промените техното съдържание, други променливи, които референсират същите данни ще видят промяната. За тези три
+да промените тяхното съдържание, други променливи, които референсират същите данни ще видят промяната. За тези три
 типа искате да използвате вградената функция, <tt class="docutils literal"><span class="pre">make</span></tt>:</p>
 <div class="highlight-go"><div class="highlight"><pre><span class="n">m</span> <span class="p">:=</span> <span class="nb">make</span><span class="p">(</span><span class="k">map</span><span class="p">[</span><span class="nb">string</span><span class="p">]</span><span class="nb">int</span><span class="p">)</span>
 </pre></div>
@@ -327,14 +327,823 @@
 <div class="highlight-go"><div class="highlight"><pre><span class="k">var</span> <span class="n">m</span> <span class="k">map</span><span class="p">[</span><span class="nb">string</span><span class="p">]</span><span class="nb">int</span>
 </pre></div>
 </div>
-<p>създава <tt class="docutils literal"><span class="pre">nil</span></tt> референция, която не може да съдържа нищо. За да използвате картата, първо трябва да инициализирате
+<p>това ще създаде <tt class="docutils literal"><span class="pre">nil</span></tt> референция, която не може да съдържа нищо. За да използвате картата, първо трябва да инициализирате
 връзката, използвайки <tt class="docutils literal"><span class="pre">make</span></tt> или като зададате вече съществуваща карта.</p>
 <p>Забележете, че <tt class="docutils literal"><span class="pre">new(T)</span></tt> връща тип <tt class="docutils literal"><span class="pre">*T</span></tt>, докато <tt class="docutils literal"><span class="pre">make(T)</span></tt> връща тип <tt class="docutils literal"><span class="pre">T</span></tt>. Ако (по погрешка) разпределите свързан
 обект с <tt class="docutils literal"><span class="pre">new</span></tt> вместо <tt class="docutils literal"><span class="pre">make</span></tt>, ще получите показател към <tt class="docutils literal"><span class="pre">nil</span></tt> връзка, еквивалентно на това да декларирате
 неинициализирана променлива и да вземете нейния адрес.</p>
 </div>
 <div class="section" id="id10">
-<h2>Антракт към константи<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
+<h2>Антракт към константи<a class="headerlink" href="#id10" title="Постоянна връзка до това заглавие">¶</a></h2>
+<p>Въпреки че числовите типове идват с много размери в Go, това не се отнася за числовите константи. Няма константи
+като <tt class="docutils literal"><span class="pre">0LL</span></tt> или <tt class="docutils literal"><span class="pre">0x0LL</span></tt>. Вместо това числовите константи биват еволюирани като много-прецизни стойности, които
+могат да прелеят само, когато са зададени към числова променлива с твърде малка прецизност, за да представят
+стойността.</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">const</span> <span class="n">hardEight</span> <span class="p">=</span> <span class="p">(</span><span class="mi">1</span> <span class="p">&lt;&lt;</span> <span class="mi">100</span><span class="p">)</span> <span class="p">&gt;&gt;</span> <span class="mi">97</span> <span class="c1">// логално</span>
+</pre></div>
+</div>
+<p>Има нюанси, които заслужават пренасочване към терминологията на езиковата спецификация, но тук има няколко примера
+за илюстрация</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">var</span> <span class="n">a</span> <span class="nb">uint64</span> <span class="p">=</span> <span class="mi">0</span>  <span class="c1">// има тип uint64, стоност 0</span>
+<span class="n">a</span> <span class="p">:=</span> <span class="nb">uint64</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>    <span class="c1">// еквивалент; използва &quot;конвертиране&quot;</span>
+<span class="n">i</span> <span class="p">:=</span> <span class="mh">0x1234</span>       <span class="c1">// i получава тип по подразбиране: int</span>
+<span class="k">var</span> <span class="n">j</span> <span class="nb">int</span> <span class="p">=</span> <span class="mf">1e6</span>   <span class="c1">// легално - 1000000 бира репрезентирано в int</span>
+<span class="n">x</span> <span class="p">:=</span> <span class="mf">1.5</span>          <span class="c1">// float64, типа по подразбиране за константи с плаваща запетая</span>
+<span class="n">i3div2</span> <span class="p">:=</span> <span class="mi">3</span><span class="p">/</span><span class="mi">2</span>     <span class="c1">// числово делене - резултата е 1</span>
+<span class="n">f3div2</span> <span class="p">:=</span> <span class="mf">3.</span><span class="p">/</span><span class="mf">2.</span>   <span class="c1">// деление с плаваща запетая - резултата е 1.5</span>
+</pre></div>
+</div>
+<p>Конвертиранията работят само за просто случаи като конвертиране на на <tt class="docutils literal"><span class="pre">int</span></tt> с един знак или размер в друг и между
+прости числа и числа с плаваща запетая, плюс няколко други инстанции извън обхвана на урока. Не съществуват никакви
+автоматични числови конвертирания в Go, освен че направените константи имат конкретен размер и тип когато биват
+зададени към променлива.</p>
+</div>
+<div class="section" id="i-o">
+<h2>I/O Пакет<a class="headerlink" href="#i-o" title="Постоянна връзка до това заглавие">¶</a></h2>
+<p>Следва да погледнем прост пакет за създаване на подобен на Unix файлов I/O с орваряне/затваряне/четене/писане интерфейс.
+Ето началото на <tt class="docutils literal"><span class="pre">file.go</span></tt>:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">package</span> <span class="n">file</span>
+
+<span class="k">import</span> <span class="p">(</span>
+    <span class="s">&quot;os&quot;</span>
+    <span class="s">&quot;syscall&quot;</span>
+<span class="p">)</span>
+
+<span class="k">type</span> <span class="n">File</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">fd</span>   <span class="nb">int</span>    <span class="c1">// file descriptor number</span>
+    <span class="n">name</span> <span class="nb">string</span> <span class="c1">// име на файла по време на Отваряне</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Първите няколко реда декларират иметона пакета - <tt class="docutils literal"><span class="pre">fie</span></tt> - и след това вмъкват два пакета. Пакетът <tt class="docutils literal"><span class="pre">os</span></tt> крие различия
+между различни операционни системи, за да даде консистентен изглед на файлове и т.н.; Тук ние ще използваме неговите
+инструменти за боравене с грешки и за да пресъздадем основите на неговия файлов I/O.</p>
+<p>Другият елемент е външен пакет syscall от ниско ниво, който представя примитивен интерфейс към основните обаждания към
+операционната система. Пекетът <tt class="docutils literal"><span class="pre">syscall</span></tt> е много зависим от системата и начинът, по който е използван тук
+работи само на Unix-подобни операционни системи, но основните идеи разгледани тук са широко-приложими. (Windows
+версия може да бъде намерен на <a class="reference external" href="http://weekly.golang.org/doc/progs/file_windows.go">file_windows.go</a>)</p>
+<p>Следва дефиниция на тип: ключовата дума <tt class="docutils literal"><span class="pre">type</span></tt> представя деклариране на тип, в този случай структура от данни,
+наречена <tt class="docutils literal"><span class="pre">File</span></tt>. За да направим нещата малко по-интересни, нашият <tt class="docutils literal"><span class="pre">File</span></tt> включва името на файла, към който
+описателят на файла, към който сочи описателят на файла.</p>
+<p>Защото <tt class="docutils literal"><span class="pre">File</span></tt> започва с главна буква, типът е достъпен извън пакета, в който е, за използващите този пакет. В Go
+правилото относно видимостта на информацията е просто: ако име (на тип от горно ниво, функция, метод, константа или
+променлива, или на структурно поле или метод) започва с главна буква, потребителите на пакета могат да го видят. В
+противен случай, името и следователно нещото, което репрезентира е видимо само в пакета, в който е дефинирано.
+Това е повече конвенция; правилото бива прилагано от компилатора. В Go, терминът за публично видими имена е
+&#8220;изнесен&#8221;.</p>
+<p>В този случая на <tt class="docutils literal"><span class="pre">File</span></tt>, всички негови полета са с малки букви и не са видими за потребителите, но ние скоро ще му
+дадем някои изнесени метода с главна буква.</p>
+<p>Първо обаче това е фабриката за създаване на файл:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">func</span> <span class="n">newFile</span><span class="p">(</span><span class="n">fd</span> <span class="nb">int</span><span class="p">,</span> <span class="n">name</span> <span class="nb">string</span><span class="p">)</span> <span class="p">*</span><span class="n">File</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">fd</span> <span class="p">&lt;</span> <span class="mi">0</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">nil</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="p">&amp;</span><span class="n">File</span><span class="p">{</span><span class="n">fd</span><span class="p">,</span> <span class="n">name</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>**
+Това връща показател към нова <tt class="docutils literal"><span class="pre">File</span></tt> структура с попълнени описание на файла и име. Този код използва нотация на Go
+за &#8220;композиционен литерал&#8221;, аналогично на тези, използвани за създаване на карти и масиви, за конструиране на нов
+heap-алокализиран обект. Бихме могли да напишем:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="n">n</span> <span class="p">:=</span> <span class="nb">new</span><span class="p">(</span><span class="n">File</span><span class="p">)</span>
+<span class="n">n</span><span class="p">.</span><span class="n">fd</span> <span class="p">=</span> <span class="n">fd</span>
+<span class="n">n</span><span class="p">.</span><span class="n">name</span> <span class="p">=</span> <span class="n">name</span>
+<span class="k">return</span> <span class="n">n</span>
+</pre></div>
+</div>
+<p>но за прости структури като <tt class="docutils literal"><span class="pre">File</span></tt> е по-лесно да върнем адреса на композирания литерал, както е направено тук във
+връщащата заявката от <tt class="docutils literal"><span class="pre">newFile</span></tt>.</p>
+<p>Можем да използваме фабриката за да конструираме някои подобни, изнесени променливи от тип <tt class="docutils literal"><span class="pre">*File</span></tt>:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">var</span> <span class="p">(</span>
+    <span class="n">Stdin</span>  <span class="p">=</span> <span class="n">newFile</span><span class="p">(</span><span class="n">syscall</span><span class="p">.</span><span class="n">Stdin</span><span class="p">,</span> <span class="s">&quot;/dev/stdin&quot;</span><span class="p">)</span>
+    <span class="n">Stdout</span> <span class="p">=</span> <span class="n">newFile</span><span class="p">(</span><span class="n">syscall</span><span class="p">.</span><span class="n">Stdout</span><span class="p">,</span> <span class="s">&quot;/dev/stdout&quot;</span><span class="p">)</span>
+    <span class="n">Stderr</span> <span class="p">=</span> <span class="n">newFile</span><span class="p">(</span><span class="n">syscall</span><span class="p">.</span><span class="n">Stderr</span><span class="p">,</span> <span class="s">&quot;/dev/stderr&quot;</span><span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Функцията <tt class="docutils literal"><span class="pre">newFile</span></tt> не е изнесена, защото е вътрешна. Правилната, изнесена фабрика за използване е <tt class="docutils literal"><span class="pre">OpenFile</span></tt>
+(ще обясним това след малко):</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">func</span> <span class="n">OpenFile</span><span class="p">(</span><span class="n">name</span> <span class="nb">string</span><span class="p">,</span> <span class="n">mode</span> <span class="nb">int</span><span class="p">,</span> <span class="n">perm</span> <span class="nb">uint32</span><span class="p">)</span> <span class="p">(</span><span class="n">file</span> <span class="p">*</span><span class="n">File</span><span class="p">,</span> <span class="n">err</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">r</span><span class="p">,</span> <span class="n">err</span> <span class="p">:=</span> <span class="n">syscall</span><span class="p">.</span><span class="n">Open</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">mode</span><span class="p">,</span> <span class="n">perm</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">newFile</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">name</span><span class="p">),</span> <span class="n">err</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>**
+Има голям брой неща в тези редове. Първо, <tt class="docutils literal"><span class="pre">OpenFile</span></tt> връща повече стойности, <tt class="docutils literal"><span class="pre">File</span></tt> и грешка (повече за грешите
+след малко). Деклрарираме много-стойностно връщане като списък с декларации, ограден в скоби; синтактично изглеждат
+като втори списък с параметри. Функцията <tt class="docutils literal"><span class="pre">syscall.Open</span></tt> също има много-стойностно връщане, което можем да хванем
+с много-променлива декларация на първия ред; деклрарира <tt class="docutils literal"><span class="pre">r</span></tt> и <tt class="docutils literal"><span class="pre">err</span></tt>, които ще съдръжат двете стойности, и двете от
+тип <tt class="docutils literal"><span class="pre">int</span></tt> (макар, че за това трябва да погледнете изходния код на <tt class="docutils literal"><span class="pre">syscall</span></tt> пакета, за да го разберете). Накрая
+<tt class="docutils literal"><span class="pre">OpenFile</span></tt> връща две стойности: показател към нов <tt class="docutils literal"><span class="pre">File</span></tt> и грешка. Ако <tt class="docutils literal"><span class="pre">syscall.Open</span></tt> се провали, описателят на
+файла <tt class="docutils literal"><span class="pre">r</span></tt> ще бъде негативен и <tt class="docutils literal"><span class="pre">newFile</span></tt> ще върне <tt class="docutils literal"><span class="pre">nil</span></tt>.</p>
+<p>Относно тези грешки: Go езикът включва основна нотация на грешка: предефиниран тип <tt class="docutils literal"><span class="pre">error</span></tt> със свойства (описани
+по-долу), който представя добра база за презентиране и обработване на грешки. Добра идея е да използвате неговата
+фабрика във вашите собствени интерфейси, както правим тук, за съвместимо обработване на грешки чрез Go код. В
+<tt class="docutils literal"><span class="pre">OpenFile</span></tt> използваме конвертиране, за да преведем числовата стойност на <tt class="docutils literal"><span class="pre">errno</span></tt> в Unix в числов тип <tt class="docutils literal"><span class="pre">оs.Errno</span></tt>,
+което е имплементация на <tt class="docutils literal"><span class="pre">error</span></tt>.</p>
+<p>Защо <tt class="docutils literal"><span class="pre">OpenFile</span></tt>, а не <tt class="docutils literal"><span class="pre">Open</span></tt>? За да имитираме <tt class="docutils literal"><span class="pre">os</span></tt> пакета на Go, който нашето упражнение емулира. Пакетът <tt class="docutils literal"><span class="pre">os</span></tt>
+използва възможността най-честите случаи - отваряне за четене и създаване за писане - най-лесни, просто <tt class="docutils literal"><span class="pre">Open</span></tt> и
+<tt class="docutils literal"><span class="pre">Create</span></tt>. <tt class="docutils literal"><span class="pre">OpenFile</span></tt> е основния случай, аналогичен на системното обаждане в Unix - <tt class="docutils literal"><span class="pre">Open</span></tt>. Тук е имплементацията
+на нашите <tt class="docutils literal"><span class="pre">Open</span></tt> и <tt class="docutils literal"><span class="pre">Create</span></tt>, те са тривиални обвивки, които елиминират честите грешки, като хващат подвещащите
+стандартни аргументи за отваряне и, осоебено, за създаване на файл:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">const</span> <span class="p">(</span>
+    <span class="n">O_RDONLY</span> <span class="p">=</span> <span class="n">syscall</span><span class="p">.</span><span class="n">O_RDONLY</span>
+    <span class="n">O_RDWR</span> <span class="p">=</span> <span class="n">syscall</span><span class="p">.</span><span class="n">O_RDWR</span>
+    <span class="n">O_CREATE</span> <span class="p">=</span> <span class="n">syscall</span><span class="p">.</span><span class="n">O_CREAT</span>
+    <span class="n">O_TRUNC</span> <span class="p">=</span> <span class="n">syscall</span><span class="p">.</span><span class="n">O_TRUNC</span>
+<span class="p">)</span>
+
+<span class="k">func</span> <span class="n">Open</span><span class="p">(</span><span class="n">name</span> <span class="nb">string</span><span class="p">)</span> <span class="p">(</span><span class="n">file</span> <span class="p">*</span><span class="n">File</span><span class="p">,</span> <span class="n">err</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">OpenFile</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">O_RDONLY</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">func</span> <span class="n">Create</span><span class="p">(</span><span class="n">name</span> <span class="nb">string</span><span class="p">)</span> <span class="p">(</span><span class="n">file</span> <span class="p">*</span><span class="n">File</span><span class="p">,</span> <span class="n">err</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">OpenFile</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">O_RDWR</span><span class="p">|</span><span class="n">O_CREATE</span><span class="p">|</span><span class="n">O_TRUNC</span><span class="p">,</span> <span class="mo">0666</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>**
+Обратно към нашата история. Сега след като можем да създаваме <tt class="docutils literal"><span class="pre">Files</span></tt>, можем да запишем методи към тях. За да
+декларираме метод към тип, дефинираме функция, която да има изричен приемник от този тип, позициониран в скоби
+преди името на функцията. Ето някои методи за <tt class="docutils literal"><span class="pre">*File</span></tt>, всеки от които декларира приемна променлива <tt class="docutils literal"><span class="pre">file</span></tt>:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">func</span> <span class="p">(</span><span class="n">file</span> <span class="p">*</span><span class="n">File</span><span class="p">)</span> <span class="n">Close</span><span class="p">()</span> <span class="n">error</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">file</span> <span class="p">==</span> <span class="n">nil</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="n">os</span><span class="p">.</span><span class="n">ErrInvalid</span>
+    <span class="p">}</span>
+    <span class="n">err</span> <span class="p">:=</span> <span class="n">syscall</span><span class="p">.</span><span class="n">Close</span><span class="p">(</span><span class="n">file</span><span class="p">.</span><span class="n">fd</span><span class="p">)</span>
+    <span class="n">file</span><span class="p">.</span><span class="n">fd</span> <span class="p">=</span> <span class="p">-</span><span class="mi">1</span> <span class="c1">// така не може да бъде затворен отново</span>
+    <span class="k">return</span> <span class="n">err</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="p">(</span><span class="n">file</span> <span class="p">*</span><span class="n">File</span><span class="p">)</span> <span class="n">Read</span><span class="p">(</span><span class="n">b</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">)</span> <span class="p">(</span><span class="n">ret</span> <span class="nb">int</span><span class="p">,</span> <span class="n">err</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">file</span> <span class="p">==</span> <span class="n">nil</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">os</span><span class="p">.</span><span class="n">ErrInvalid</span>
+    <span class="p">}</span>
+    <span class="n">r</span><span class="p">,</span> <span class="n">err</span> <span class="p">:=</span> <span class="n">syscall</span><span class="p">.</span><span class="n">Read</span><span class="p">(</span><span class="n">file</span><span class="p">.</span><span class="n">fd</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">r</span><span class="p">),</span> <span class="n">err</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="p">(</span><span class="n">file</span> <span class="p">*</span><span class="n">File</span><span class="p">)</span> <span class="n">Write</span><span class="p">(</span><span class="n">b</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">)</span> <span class="p">(</span><span class="n">ret</span> <span class="nb">int</span><span class="p">,</span> <span class="n">err</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="n">file</span> <span class="p">==</span> <span class="n">nil</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="p">-</span><span class="mi">1</span><span class="p">,</span> <span class="n">os</span><span class="p">.</span><span class="n">ErrInvalid</span>
+    <span class="p">}</span>
+    <span class="n">r</span><span class="p">,</span> <span class="n">err</span> <span class="p">:=</span> <span class="n">syscall</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="n">file</span><span class="p">.</span><span class="n">fd</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+    <span class="k">return</span> <span class="nb">int</span><span class="p">(</span><span class="n">r</span><span class="p">),</span> <span class="n">err</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="p">(</span><span class="n">file</span> <span class="p">*</span><span class="n">File</span><span class="p">)</span> <span class="n">String</span><span class="p">()</span> <span class="nb">string</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">file</span><span class="p">.</span><span class="n">name</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>**
+Не съществува косвен <tt class="docutils literal"><span class="pre">this</span></tt> и приемната променлива трябва да бъде използвана за достъп до членовете на структурата.
+Методи не се декларират в самата <tt class="docutils literal"><span class="pre">struct</span></tt> декларация. Декларацията <tt class="docutils literal"><span class="pre">struct</span></tt> дефинира само членове на данните.
+Всъщност методи могат да бъдат създавани за почти всеки тип, за който се сетите, като числа или масиви, не само за
+<tt class="docutils literal"><span class="pre">structs</span></tt>. Ще видим пример с масиви по-късно.</p>
+<p>Методът <tt class="docutils literal"><span class="pre">String</span></tt> е наречен така, заради конвенция за принтиране, която ще опишем по-късно.</p>
+<p>Методите използват публичната променлива <tt class="docutils literal"><span class="pre">os.ErrInvalid</span></tt> за да върнат (<tt class="docutils literal"><span class="pre">error</span></tt> версията на) Unix код за грешка
+<tt class="docutils literal"><span class="pre">EINVAL</span></tt>. Библиотеката <tt class="docutils literal"><span class="pre">os</span></tt> дефинира стандарт комплект от подобни стойности за грешка.</p>
+<p>Сега вече можем да използваме нашия нов пакет:</p>
+<div class="highlight-go"><pre>package main
+
+import (
+    "./file"
+    "fmt"
+    "os"
+)
+
+func main() {
+    hello := []byte("hello world\n")
+    file.Stdout.Write(hello)
+    f, err := file.Open("/does/not/exists)
+    if f == nil {
+        fmt.Printf("Файлът не може да бъде отворен: err=%s\n", err.Error())
+        os.Exit(1)
+    }
+}</pre>
+</div>
+<p><a href="#id11"><span class="problematic" id="id12">**</span></a></p>
+<div class="admonition note">
+<p class="first admonition-title">Бележка</p>
+<p class="last">При &#8221;./&#8221; във вмъкването на <tt class="docutils literal"><span class="pre">&quot;./file&quot;</span></tt> казваме на компилатора да използва нашия пакет, вместо нещо от
+директорията с инсталирани пакети. (Също, <tt class="docutils literal"><span class="pre">&quot;file.go&quot;</span></tt> трябва да бъде компилиран преди да вмъкнем пакета.)</p>
+</div>
+<p>Вече можем да компилираме и изпълним програмата. Под Unix резултатът би бил такъв:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> 6g file.go                       <span class="c"># компилиране на file пакета</span>
+<span class="gp">$</span> 6g helloworld3.go                <span class="c"># компилиране на main пакета</span>
+<span class="gp">$</span> 6l -o helloworld3 helloworld3.6  <span class="c"># свързване - не е нобходимо да се споменава &quot;file&quot;</span>
+<span class="gp">$</span> ./helloworld3
+<span class="go">hello, world</span>
+<span class="go">Файлът не може да бъде отворен: err=No such file or directory</span>
+<span class="gp">$</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id13">
+<h2>Гниещи котки<a class="headerlink" href="#id13" title="Постоянна връзка до това заглавие">¶</a></h2>
+<p>Строейки върху <tt class="docutils literal"><span class="pre">file</span></tt> пакета, следващото е опростена версия на Unix инструмента <tt class="docutils literal"><span class="pre">cat(1)</span></tt>, <tt class="docutils literal"><span class="pre">progs/cat.go</span></tt></p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="p">(</span>
+    <span class="s">&quot;./file&quot;</span>
+    <span class="s">&quot;flag&quot;</span>
+    <span class="s">&quot;fmt&quot;</span>
+    <span class="s">&quot;os&quot;</span>
+<span class="p">)</span>
+
+<span class="k">func</span> <span class="n">cat</span><span class="p">(</span><span class="n">f</span> <span class="p">*</span><span class="n">file</span><span class="p">.</span><span class="n">File</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">const</span> <span class="n">NBUF</span> <span class="p">=</span> <span class="mi">512</span>
+    <span class="k">var</span> <span class="n">buf</span> <span class="p">[</span><span class="n">NBUF</span><span class="p">]</span><span class="nb">byte</span>
+    <span class="k">for</span> <span class="p">{</span>
+        <span class="k">switch</span> <span class="n">nr</span><span class="p">,</span> <span class="n">er</span> <span class="p">:=</span> <span class="n">f</span><span class="p">.</span><span class="n">Read</span><span class="p">(</span><span class="n">buf</span><span class="p">[:]);</span> <span class="n">true</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="n">nr</span> <span class="p">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">fmt</span><span class="p">.</span><span class="n">Fprintf</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">Stderr</span><span class="p">,</span> <span class="s">&quot;cat: error reading from %s: %s\n&quot;</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">er</span><span class="p">)</span>
+            <span class="n">os</span><span class="p">.</span><span class="n">Exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">case</span> <span class="n">nr</span> <span class="p">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c1">// EOF</span>
+            <span class="k">return</span>
+        <span class="k">case</span> <span class="n">nr</span> <span class="p">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">nw</span><span class="p">,</span> <span class="n">ew</span> <span class="p">:=</span> <span class="n">file</span><span class="p">.</span><span class="n">Stdout</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="n">buf</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">nr</span><span class="p">]);</span> <span class="n">nw</span> <span class="p">!=</span> <span class="n">nr</span> <span class="p">{</span>
+                <span class="n">fmt</span><span class="p">.</span><span class="n">Fprintf</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">Stderr</span><span class="p">,</span> <span class="s">&quot;cat: error writing from %s: %s\n&quot;</span><span class="p">,</span> <span class="n">f</span><span class="p">,</span> <span class="n">ew</span><span class="p">)</span>
+                <span class="n">os</span><span class="p">.</span><span class="n">Exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">flag</span><span class="p">.</span><span class="n">Parse</span><span class="p">()</span> <span class="c1">// Scans the arg list and sets up flags</span>
+    <span class="k">if</span> <span class="n">flag</span><span class="p">.</span><span class="n">NArg</span><span class="p">()</span> <span class="p">==</span> <span class="mi">0</span> <span class="p">{</span>
+        <span class="n">cat</span><span class="p">(</span><span class="n">file</span><span class="p">.</span><span class="n">Stdin</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="p">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">flag</span><span class="p">.</span><span class="n">NArg</span><span class="p">();</span> <span class="n">i</span><span class="p">++</span> <span class="p">{</span>
+        <span class="n">f</span><span class="p">,</span> <span class="n">err</span> <span class="p">:=</span> <span class="n">file</span><span class="p">.</span><span class="n">Open</span><span class="p">(</span><span class="n">flag</span><span class="p">.</span><span class="n">Arg</span><span class="p">(</span><span class="n">i</span><span class="p">))</span>
+        <span class="k">if</span> <span class="n">f</span> <span class="p">==</span> <span class="n">nil</span> <span class="p">{</span>
+            <span class="n">fmt</span><span class="p">.</span><span class="n">Fprintf</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">Stderr</span><span class="p">,</span> <span class="s">&quot;cat: can&#39;t open %s: error %s\n&quot;</span><span class="p">,</span> <span class="n">flag</span><span class="p">.</span><span class="n">Arg</span><span class="p">(</span><span class="n">i</span><span class="p">),</span> <span class="n">err</span><span class="p">)</span>
+            <span class="n">os</span><span class="p">.</span><span class="n">Exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="p">}</span>
+        <span class="n">cat</span><span class="p">(</span><span class="n">f</span><span class="p">)</span>
+        <span class="n">f</span><span class="p">.</span><span class="n">Close</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>**
+До този момент това би трябвало да бъде лесно за проследяване, но <tt class="docutils literal"><span class="pre">switch</span></tt> заявката представя някои нови свойства.
+Както <tt class="docutils literal"><span class="pre">for</span></tt> и <tt class="docutils literal"><span class="pre">if</span></tt>, <tt class="docutils literal"><span class="pre">switch</span></tt> може да включва инициализираща заявка. Заявката <tt class="docutils literal"><span class="pre">switch</span></tt> в <tt class="docutils literal"><span class="pre">cat</span></tt> използва
+такава за създаване на променливите <tt class="docutils literal"><span class="pre">nr</span></tt> и <tt class="docutils literal"><span class="pre">er</span></tt>, които да съдържат върнатите стойности от извикването на
+<tt class="docutils literal"><span class="pre">f.Read</span></tt> (<tt class="docutils literal"><span class="pre">if</span></tt> няколко реда по-късно има същата идея.) Заявката <tt class="docutils literal"><span class="pre">switch</span></tt> е основна: оценява случаите от
+началото до края, търсейки за първия случай отговарящ на стойността; изразите за случай (<tt class="docutils literal"><span class="pre">case</span></tt>) не е задължително
+да бъдат константи или дори числа, докато всички имат един и същи тип.</p>
+<p>Тъй като <tt class="docutils literal"><span class="pre">switch</span></tt> стойността е просто <tt class="docutils literal"><span class="pre">true</span></tt>, можем да я избегнем - както е в случая на <tt class="docutils literal"><span class="pre">for</span></tt> заявката,
+липсваща стойност означава <tt class="docutils literal"><span class="pre">true</span></tt>. Всъщност <tt class="docutils literal"><span class="pre">switch</span></tt> е форма на <tt class="docutils literal"><span class="pre">if-else</span></tt> верига. Докато сме тук, трябва да бъде
+споменато, че в <tt class="docutils literal"><span class="pre">switch</span></tt> заявки всеки <tt class="docutils literal"><span class="pre">case</span></tt> има косвен/скрит <tt class="docutils literal"><span class="pre">break</span></tt>.</p>
+<p>Аргументът към <tt class="docutils literal"><span class="pre">file.Stdout.Write</span></tt> е създаден от изрязване на масива <tt class="docutils literal"><span class="pre">buf</span></tt>. Изрезките представляват стандартния
+Go-начин за работа с I/O буфери.</p>
+<p>Сега нека направим вариант на <tt class="docutils literal"><span class="pre">cat</span></tt>, който опционално прави <tt class="docutils literal"><span class="pre">rot13</span></tt> на своя изход. Лесно е да се направи като
+просто се обработят байтовете, но вместо това ние ще използваме нотацията на Go за <em>интерфейс</em>.</p>
+<p>Субротината на <tt class="docutils literal"><span class="pre">cat</span></tt> използва само два метода на <tt class="docutils literal"><span class="pre">f.Read</span></tt> и <tt class="docutils literal"><span class="pre">String</span></tt>, така че нека започнем като дефинираме
+интерфейс, който има точно тези два метода. Ето кода от <tt class="docutils literal"><span class="pre">progs/cat_rot13.go</span></tt>:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">type</span> <span class="n">reader</span> <span class="k">interface</span> <span class="p">{</span>
+    <span class="n">Read</span><span class="p">(</span><span class="n">b</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">)</span> <span class="p">(</span><span class="n">ret</span> <span class="nb">int</span><span class="p">,</span> <span class="n">err</span> <span class="n">error</span><span class="p">)</span>
+    <span class="nb">string</span><span class="p">()</span> <span class="nb">string</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Всеки тип, който има два метода от <tt class="docutils literal"><span class="pre">reader</span></tt> - без значение от това колко още други метода има типът - е казано да
+<em>имплементира</em> инферфейса. След като <tt class="docutils literal"><span class="pre">file.File</span></tt> имплементира тези методи, той имплементира <tt class="docutils literal"><span class="pre">reader</span></tt> интерфейс.
+Можем да променим <tt class="docutils literal"><span class="pre">cat</span></tt> субротината да приема <tt class="docutils literal"><span class="pre">reader</span></tt> вместо <tt class="docutils literal"><span class="pre">*file.File</span></tt> и ще работи просто добре, но нека
+разкрасим преди това като напишем втори тип, който имплементира <tt class="docutils literal"><span class="pre">reader</span></tt>, такъв който обвива съществуващ <tt class="docutils literal"><span class="pre">reader</span></tt>
+и изпълнява <tt class="docutils literal"><span class="pre">rot13</span></tt> върху данните. За да направим това просто дефинираме тип и имплементираме методите и без
+повече осчетоводяване имаме втора имплементация на <tt class="docutils literal"><span class="pre">reader</span></tt> интерфейс.</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">type</span> <span class="n">rotate13</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">source</span> <span class="n">reader</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="n">newRotate13</span><span class="p">(</span><span class="n">source</span> <span class="n">reader</span><span class="p">)</span> <span class="p">*</span><span class="n">rotate13</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="p">&amp;</span><span class="n">rotate13</span><span class="p">{</span><span class="n">source</span><span class="p">}</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="p">(</span><span class="n">r13</span> <span class="p">*</span><span class="n">rotate13</span><span class="p">)</span> <span class="n">Read</span><span class="p">(</span><span class="n">b</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">)</span> <span class="p">(</span><span class="n">ret</span> <span class="nb">int</span><span class="p">,</span> <span class="n">err</span> <span class="n">error</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">r</span><span class="p">,</span> <span class="n">e</span> <span class="p">:=</span> <span class="n">r13</span><span class="p">.</span><span class="n">source</span><span class="p">.</span><span class="n">Read</span><span class="p">(</span><span class="n">b</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="p">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">r</span><span class="p">;</span> <span class="n">i</span><span class="p">++</span> <span class="p">{</span>
+        <span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">=</span> <span class="n">rot13</span><span class="p">(</span><span class="n">b</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">r</span><span class="p">,</span> <span class="n">e</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="p">(</span><span class="n">r13</span> <span class="p">*</span><span class="n">rotate13</span><span class="p">)</span> <span class="n">String</span><span class="p">()</span> <span class="nb">string</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">r13</span><span class="p">.</span><span class="n">source</span><span class="p">.</span><span class="n">String</span><span class="p">()</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><a href="#id14"><span class="problematic" id="id15">**</span></a></p>
+<div class="admonition note">
+<p class="first admonition-title">Бележка</p>
+<p class="last">Функцията <tt class="docutils literal"><span class="pre">rot13</span></tt> извикана в <tt class="docutils literal"><span class="pre">Read</span></tt> е тривиална и не е нужно да бъде пресъздавана тук</p>
+</div>
+<p>За да използваме новата функционалност дефинираме флаг:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">var</span> <span class="n">rot13Flag</span> <span class="p">=</span> <span class="n">glag</span><span class="p">.</span><span class="n">Bool</span><span class="p">(</span><span class="s">&quot;rot13&quot;</span><span class="p">,</span> <span class="n">false</span><span class="p">,</span> <span class="s">&quot;rot13 the input&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>и го използваме от почти непроменената <tt class="docutils literal"><span class="pre">cat</span></tt> функция:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">func</span> <span class="n">cat</span><span class="p">(</span><span class="n">r</span> <span class="n">reader</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">const</span> <span class="n">NBUF</span> <span class="p">=</span> <span class="mi">512</span>
+    <span class="k">var</span> <span class="n">buf</span> <span class="p">[</span><span class="n">NBUF</span><span class="p">]</span><span class="nb">byte</span>
+
+    <span class="k">if</span> <span class="p">*</span><span class="n">rot13Flag</span> <span class="p">{</span>
+        <span class="n">r</span> <span class="p">=</span> <span class="n">newRotate13</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="p">{</span>
+        <span class="k">switch</span> <span class="n">nr</span><span class="p">,</span> <span class="n">er</span> <span class="p">:=</span> <span class="n">r</span><span class="p">.</span><span class="n">Read</span><span class="p">(</span><span class="n">buf</span><span class="p">[:]);</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="n">nr</span> <span class="p">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">fmt</span><span class="p">.</span><span class="n">Fprintf</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">Stderr</span><span class="p">,</span> <span class="s">&quot;cat: error reading from %s: %s\n&quot;</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">er</span><span class="p">)</span>
+            <span class="n">os</span><span class="p">.</span><span class="n">Exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">case</span> <span class="n">nr</span> <span class="p">==</span> <span class="mi">0</span><span class="p">:</span> <span class="c1">// EOF</span>
+            <span class="k">return</span>
+        <span class="k">case</span> <span class="n">nr</span> <span class="p">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">nw</span><span class="p">,</span> <span class="n">ew</span> <span class="p">:=</span> <span class="n">file</span><span class="p">.</span><span class="n">Stdout</span><span class="p">.</span><span class="n">Write</span><span class="p">(</span><span class="n">buf</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">nr</span><span class="p">])</span>
+            <span class="k">if</span> <span class="n">nw</span> <span class="p">!=</span> <span class="n">nr</span> <span class="p">{</span>
+                <span class="n">fmt</span><span class="p">.</span><span class="n">Fprintf</span><span class="p">(</span><span class="n">os</span><span class="p">.</span><span class="n">Stderr</span><span class="p">,</span> <span class="s">&quot;cat: error writing from %s: %s\n&quot;</span><span class="p">,</span> <span class="n">r</span><span class="p">,</span> <span class="n">ew</span><span class="p">)</span>
+                <span class="n">os</span><span class="p">.</span><span class="n">Exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><a href="#id16"><span class="problematic" id="id17">**</span></a></p>
+<div class="admonition note">
+<p class="first admonition-title">Бележка</p>
+<p class="last">Също така бихме могли да направим обхващането в <tt class="docutils literal"><span class="pre">main</span></tt> и почти да не закачаме <tt class="docutils literal"><span class="pre">cat</span></tt>, освен за промяна на типа на аргумента; приемете това като упражнение.</p>
+</div>
+<p><tt class="docutils literal"><span class="pre">if</span></tt> в началото на <tt class="docutils literal"><span class="pre">cat</span></tt> нагласява всичко: ако <tt class="docutils literal"><span class="pre">rot13</span></tt> флагът е истина, обвий <tt class="docutils literal"><span class="pre">reader</span></tt>-а, който получихме
+в <tt class="docutils literal"><span class="pre">rotate13</span></tt> и продължи. Забележете, че променливите на интерфейса са стойности, но показатели: аргументът е от
+тип <tt class="docutils literal"><span class="pre">reader</span></tt>, не <tt class="docutils literal"><span class="pre">*reader</span></tt>, въпреки че под него се крие показатаел към <tt class="docutils literal"><span class="pre">struct</span></tt>.</p>
+<p>Ето го в действие:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> <span class="nb">echo </span>abcdefghijklmnopqrstuvwxyz | ./cat
+<span class="go">abcdefghijklmnopqrstuvwxyz</span>
+<span class="gp">$</span> <span class="nb">echo </span>abcdefghijklmnopqrstuvwxyz | ./cat --rot13
+<span class="go">nopqrstuvwxyzabcdefghijklm</span>
+<span class="gp">$</span>
+</pre></div>
+</div>
+<p>Феновете на инжектиране на зависимости могат да се зарадват от това колко лесно интерфейсите ни позволяват да
+заместим имплементацията на файлов описател.</p>
+<p>Интерфейсите са отличителен белег на Go. Интерфейс е имплементиран от типа, ако типа имплементира всички методи,
+декларирани в интерфейса. Това означава, че тип може да имплементира произволен брой различни интерфейси. Не
+съществува йерархия на типовете; нещата моагат да бъдат много повече <em>ad hoc</em>, както видяхме с <tt class="docutils literal"><span class="pre">rot13</span></tt>.
+Типът <tt class="docutils literal"><span class="pre">file.File</span></tt> имплементира <tt class="docutils literal"><span class="pre">reader</span></tt>; също би могъл да имплементира и <tt class="docutils literal"><span class="pre">writer</span></tt>, или всеки друг интерфейс,
+изграден от неговите методи, които отговарят на настоящата ситуация. Замислете се над <em>празния интерфейс</em></p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">type</span> <span class="n">Empty</span> <span class="k">interface</span> <span class="p">{}</span>
+</pre></div>
+</div>
+<p><em>Всеки</em> тип имплементира празния интерфейс, което го прави полезен за неща като съдържатели.</p>
+</div>
+<div class="section" id="id18">
+<h2>Сортиране<a class="headerlink" href="#id18" title="Постоянна връзка до това заглавие">¶</a></h2>
+<p>Интерфейсите представляват проста форма на полиморфизъм. Те напълно разграничават дефиницията на какво прави един обект
+от това как го прави, позволявайки различни имплементации да бъдат представяни по различно време от същата
+интерфейс променлива.</p>
+<p>Като пример, разгледайте този просто алгоритъм за сортиране взет от <tt class="docutils literal"><span class="pre">progs/sort.go</span></tt></p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">func</span> <span class="n">Sort</span><span class="p">(</span><span class="n">data</span> <span class="n">Interface</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="p">:=</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">data</span><span class="p">.</span><span class="n">Len</span><span class="p">();</span> <span class="n">i</span><span class="p">++</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="n">j</span> <span class="p">:=</span><span class="n">i</span><span class="p">;</span> <span class="n">j</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">&amp;&amp;</span> <span class="n">data</span><span class="p">.</span><span class="n">Less</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">j</span><span class="p">-</span><span class="mi">1</span><span class="p">);</span> <span class="n">j</span><span class="p">--</span> <span class="p">{</span>
+            <span class="n">data</span><span class="p">.</span><span class="n">Swap</span><span class="p">(</span><span class="n">j</span><span class="p">,</span> <span class="n">j</span><span class="p">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Кодът се нуждае само от три метода, които обвиваме в <tt class="docutils literal"><span class="pre">Interface</span></tt> в sort:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">type</span> <span class="n">Interface</span> <span class="k">interface</span> <span class="p">{</span>
+    <span class="n">Len</span><span class="p">()</span> <span class="nb">int</span>
+    <span class="n">Less</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="nb">int</span><span class="p">)</span> <span class="n">bool</span>
+    <span class="n">Swap</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="nb">int</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Можем да приложим <tt class="docutils literal"><span class="pre">Sort</span></tt> върху всеки тип, който имплементира <tt class="docutils literal"><span class="pre">Len</span></tt>, <tt class="docutils literal"><span class="pre">Less</span></tt> и <tt class="docutils literal"><span class="pre">Swap</span></tt>. Пакетът <tt class="docutils literal"><span class="pre">sort</span></tt> включва
+необходимите методи, за да позволи сортирането на масиви от числа, низове и други; ето кода за масиви от <tt class="docutils literal"><span class="pre">int</span></tt></p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">type</span> <span class="n">IntSlice</span> <span class="p">[]</span><span class="nb">int</span>
+
+<span class="k">func</span> <span class="p">(</span><span class="n">p</span> <span class="n">IntSlice</span><span class="p">)</span> <span class="n">Len</span><span class="p">()</span> <span class="nb">int</span>             <span class="p">{</span> <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">)</span> <span class="p">}</span>
+<span class="k">func</span> <span class="p">(</span><span class="n">p</span> <span class="n">IntSlice</span><span class="p">)</span> <span class="n">Less</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="nb">int</span><span class="p">)</span> <span class="n">bool</span>   <span class="p">{</span> <span class="k">return</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">&lt;</span> <span class="n">p</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="p">}</span>
+<span class="k">func</span> <span class="p">(</span><span class="n">p</span> <span class="n">IntSlice</span><span class="p">)</span> <span class="n">Swap</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="nb">int</span><span class="p">)</span>        <span class="p">{</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="p">=</span> <span class="n">p</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">p</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">}</span>
+</pre></div>
+</div>
+<p>Тук виждаме методите дефинирани в не- <tt class="docutils literal"><span class="pre">struct</span></tt> тип. Можете да дефинирате методи за всеки тип, който дефинирате
+и именувате в своя пакет.</p>
+<p>А сега рутината, за да го тестваме от <tt class="docutils literal"><span class="pre">progs/sortmain.go</span></tt>. Това използва функция в <tt class="docutils literal"><span class="pre">sort</span></tt> пакета, изпусната тук
+за по-кратко, за да тества дали резултата е сортиран.</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">func</span> <span class="n">ints</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">data</span> <span class="p">:=</span> <span class="p">[]</span><span class="nb">int</span><span class="p">{</span><span class="mi">74</span><span class="p">,</span> <span class="mi">59</span><span class="p">,</span> <span class="mi">238</span><span class="p">,</span> <span class="p">-</span><span class="mi">784</span><span class="p">,</span> <span class="mi">9845</span><span class="p">,</span> <span class="mi">959</span><span class="p">,</span> <span class="mi">905</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">42</span><span class="p">,</span> <span class="mi">7586</span><span class="p">,</span> <span class="p">-</span><span class="mi">5467984</span><span class="p">,</span> <span class="mi">7586</span><span class="p">}</span>
+    <span class="n">a</span> <span class="p">:=</span> <span class="n">sort</span><span class="p">.</span><span class="n">IntSlice</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+    <span class="n">sort</span><span class="p">.</span><span class="n">Sort</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+    <span class="k">if</span> <span class="p">!</span><span class="n">sort</span><span class="p">.</span><span class="n">IsSorted</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">panic</span><span class="p">(</span><span class="s">&quot;fail&quot;</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Ако имаме нов тип, който искаме да сортираме, всичко което трябва да направим е да имплементираме трите метода
+за този тип ето така:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">type</span> <span class="n">day</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">num</span>       <span class="nb">int</span>
+    <span class="n">shortName</span> <span class="nb">string</span>
+    <span class="n">longName</span>  <span class="nb">string</span>
+<span class="p">}</span>
+
+<span class="k">type</span> <span class="n">dayArray</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">data</span> <span class="p">[]*</span><span class="n">day</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="p">(</span><span class="n">p</span> <span class="p">*</span><span class="n">dayArray</span><span class="p">)</span> <span class="n">Len</span><span class="p">()</span> <span class="nb">int</span>           <span class="p">{</span> <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="n">p</span><span class="p">.</span><span class="n">data</span><span class="p">)</span> <span class="p">}</span>
+<span class="k">func</span> <span class="p">(</span><span class="n">p</span> <span class="p">*</span><span class="n">dayArray</span><span class="p">)</span> <span class="n">Less</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="nb">int</span><span class="p">)</span> <span class="n">bool</span> <span class="p">{</span> <span class="k">return</span> <span class="n">p</span><span class="p">.</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">num</span> <span class="p">&lt;</span> <span class="n">p</span><span class="p">.</span><span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">].</span><span class="n">num</span> <span class="p">}</span>
+<span class="k">func</span> <span class="p">(</span><span class="n">p</span> <span class="p">*</span><span class="n">dayArray</span><span class="p">)</span> <span class="n">Swap</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">j</span> <span class="nb">int</span><span class="p">)</span>      <span class="p">{</span> <span class="n">p</span><span class="p">.</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">p</span><span class="p">.</span><span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">]</span> <span class="p">=</span> <span class="n">p</span><span class="p">.</span><span class="n">data</span><span class="p">[</span><span class="n">j</span><span class="p">],</span> <span class="n">p</span><span class="p">.</span><span class="n">data</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="p">}</span>
+</pre></div>
+</div>
+<p><a href="#id19"><span class="problematic" id="id20">**</span></a></p>
+</div>
+<div class="section" id="id21">
+<h2>Принтиране<a class="headerlink" href="#id21" title="Постоянна връзка до това заглавие">¶</a></h2>
+<p>Примерите за форматирано принтиране до момента бяха скромни. В тази секция ще говорим относно това как форматиран
+I/O може да бъде направен добре в Go.</p>
+<p>Видяхме простото използване на пакета <tt class="docutils literal"><span class="pre">fmt</span></tt>, който имплементира <tt class="docutils literal"><span class="pre">Printf</span></tt>, <tt class="docutils literal"><span class="pre">Fprintf</span></tt> и т.н.. В пакета
+<tt class="docutils literal"><span class="pre">fmt</span></tt>, <tt class="docutils literal"><span class="pre">Printf</span></tt> е деклрарирана със следната структура:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="n">Printf</span><span class="p">(</span><span class="n">format</span> <span class="nb">string</span><span class="p">,</span> <span class="n">v</span> <span class="p">...</span><span class="k">interface</span><span class="p">{})</span> <span class="p">(</span><span class="n">n</span> <span class="nb">int</span><span class="p">,</span> <span class="n">errno</span> <span class="n">error</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Символът <tt class="docutils literal"><span class="pre">...</span></tt> представя дължината на променливата с списъка с аргументи, което в C се обработва, използвайки
+<tt class="docutils literal"><span class="pre">stdarg.h</span></tt> макроси. В Go, <em>различни</em> (variadic) функции получават изрезка от аргументи от специфичен тип. В
+случая на <tt class="docutils literal"><span class="pre">Printf</span></tt>, декларацията казва <tt class="docutils literal"><span class="pre">...interface{}</span></tt>, така че актуалния тип е изрезка от празни интерфейс
+стойности, <tt class="docutils literal"><span class="pre">[]interface{}</span></tt>. <tt class="docutils literal"><span class="pre">Printf</span></tt> може да изследва аргументите като обходи изрезката и, за всеки елемент,
+използвайки типове превключвател или библиотека за рефлекеции да инерпретира стойността. Това е извън темата, но
+подобен тип анализ по време на изпълнение помага да се обяснят някои от хубавите свойства на <tt class="docutils literal"><span class="pre">Printf</span></tt> в Go,
+поради възможността на <tt class="docutils literal"><span class="pre">Printf</span></tt> да открие типа на аргументите динамично.</p>
+<p>На пример, в C всеки формат трябва да отговаря на типа на своя аргумент. Това при много случаи е по-лесно в Go.
+Вместо <tt class="docutils literal"><span class="pre">%llud</span></tt> можете да кажете <tt class="docutils literal"><span class="pre">%d</span></tt>; <tt class="docutils literal"><span class="pre">Printf</span></tt> знае размера и вида на знака на число и може да направи
+правилното за вас. Примерня код</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">var</span> <span class="n">u64</span> <span class="nb">uint64</span> <span class="p">=</span> <span class="mi">1</span><span class="p">&lt;&lt;</span><span class="mi">64</span> <span class="p">-</span><span class="mi">1</span>
+<span class="n">fmt</span><span class="p">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">&quot;%d %d\n&quot;</span><span class="p">,</span> <span class="n">u64</span><span class="p">,</span> <span class="nb">int64</span><span class="p">(</span><span class="n">u64</span><span class="p">))</span>
+</pre></div>
+</div>
+<p>принтира</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">18446744073709551615 -1</span>
+</pre></div>
+</div>
+<p>Всъщност, ако сте мързеливи форматът %v ще принтира в прост походящ стил, всяка стойност, дори масив или
+структура. Изходът на</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">type</span> <span class="n">T</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">a</span> <span class="nb">int</span>
+    <span class="n">b</span> <span class="nb">string</span>
+<span class="p">}</span>
+<span class="n">t</span> <span class="p">:=</span> <span class="n">T</span><span class="p">{</span><span class="mi">77</span><span class="p">,</span> <span class="s">&quot;Sunset Strip&quot;</span><span class="p">}</span>
+<span class="n">a</span> <span class="p">:=</span> <span class="p">[]</span><span class="nb">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">}</span>
+<span class="n">fmt</span><span class="p">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">&quot;%v %v %v\n&quot;</span><span class="p">,</span> <span class="n">u64</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>e</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">18446744073709551615 {77 Sunset Strip} [1 2 3 4]</span>
+</pre></div>
+</div>
+<p>Можете да избегнете форматирането изцяло ако използвате <tt class="docutils literal"><span class="pre">Println</span></tt> вместо <tt class="docutils literal"><span class="pre">Printf</span></tt>. Тези рутини правят
+напълно автоматично форматиране. Функцията <tt class="docutils literal"><span class="pre">Print</span></tt> просто принтира своите елементи използвайки еквивалент на
+<tt class="docutils literal"><span class="pre">%v</span></tt>, докато <tt class="docutils literal"><span class="pre">Println</span></tt> вмъква шпации между аргументите и добавя нов ред. Изходът от тези два реда е
+на извикването на <tt class="docutils literal"><span class="pre">Printf</span></tt> по-горе</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="n">fmt</span><span class="p">.</span><span class="n">Print</span><span class="p">(</span><span class="n">u64</span><span class="p">,</span> <span class="s">&quot; &quot;</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="s">&quot; &quot;</span><span class="p">,</span> <span class="n">a</span><span class="p">,</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span>
+<span class="n">fmt</span><span class="p">.</span><span class="n">Println</span><span class="p">(</span><span class="n">u64</span><span class="p">,</span> <span class="n">t</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Ако имате собствен тип и искате <tt class="docutils literal"><span class="pre">Printf</span></tt> или <tt class="docutils literal"><span class="pre">Print</span></tt> да го форматират, просто създайте <tt class="docutils literal"><span class="pre">String</span></tt> метод, който
+връща низ. Рутините за разпечатване ще изследват стойността, за да определят дали тя имплементира този метод и
+ако е така ще използват него, вместо някакво друго форматиране.</p>
+<p>Ето прост пример:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">type</span> <span class="n">testType</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">a</span> <span class="nb">int</span>
+    <span class="n">b</span> <span class="nb">string</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="p">(</span><span class="n">t</span> <span class="p">*</span><span class="n">testType</span><span class="p">)</span> <span class="n">String</span><span class="p">()</span> <span class="nb">string</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="n">fmt</span><span class="p">.</span><span class="n">Sprint</span><span class="p">(</span><span class="n">t</span><span class="p">.</span><span class="n">a</span><span class="p">)</span> <span class="p">+</span> <span class="s">&quot; &quot;</span> <span class="p">+</span> <span class="n">t</span><span class="p">.</span><span class="n">b</span>
+<span class="p">}</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">t</span> <span class="p">:=</span> <span class="p">&amp;</span><span class="n">testType</span><span class="p">{</span><span class="mi">77</span><span class="p">,</span> <span class="s">&quot;Sunset Strip&quot;</span><span class="p">}</span>
+    <span class="n">fmt</span><span class="p">.</span><span class="n">Println</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><a href="#id22"><span class="problematic" id="id23">**</span></a></p>
+<p>Тъй като <tt class="docutils literal"><span class="pre">*testType</span></tt> има <tt class="docutils literal"><span class="pre">String</span></tt> метод, форматерът за този тип ще го използва за създаване на изхода.</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="go">77 Sunset Strip</span>
+</pre></div>
+</div>
+<p>Наблюдавайте, че методът <tt class="docutils literal"><span class="pre">String</span></tt> извиква метода <tt class="docutils literal"><span class="pre">Sprint</span></tt> (очевидния Go вариант за връщане на низ), за да
+направи своето форматиране; специални форматери могат да използват библиотеката <tt class="docutils literal"><span class="pre">fmt</span></tt> рекурсивно.</p>
+<p>Друга особеност на <tt class="docutils literal"><span class="pre">Printf</span></tt> е, че форматът <tt class="docutils literal"><span class="pre">%T</span></tt> низовата репрезентация на типа на стойност, което може да бъде
+полезно при търсене за грешки в полиморфичен код.</p>
+<p>Възможно е да напишете и собствени формати за принтиране с флагове и прецизност и подобни, но това е вече малко
+извън основната тема, така че ще го оставим като упражнение за изследване.</p>
+<p>Може да попитате, как <tt class="docutils literal"><span class="pre">Printf</span></tt> може да каже дали даден тип имплементира метода <tt class="docutils literal"><span class="pre">String</span></tt>. Всъщност това, което
+прави е да попита стойността дали може да бъде конвертирана в интерфейс променлива, която имплементира този метод.
+Схематично при дадена стойност <tt class="docutils literal"><span class="pre">v</span></tt> прави</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">type</span> <span class="n">Stringer</span> <span class="k">interface</span> <span class="p">{</span>
+    <span class="n">String</span><span class="p">()</span> <span class="nb">string</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<div class="highlight-go"><div class="highlight"><pre><span class="n">s</span><span class="p">,</span> <span class="n">ok</span> <span class="p">:=</span> <span class="n">v</span><span class="p">.(</span><span class="n">Stringer</span><span class="p">)</span>  <span class="c1">// Проверка дали v имплементира &quot;String()&quot;</span>
+<span class="k">if</span> <span class="n">ok</span> <span class="p">{</span>
+    <span class="n">result</span> <span class="p">=</span> <span class="n">s</span><span class="p">.</span><span class="n">String</span><span class="p">()</span>
+<span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+    <span class="n">result</span> <span class="p">=</span> <span class="n">defaultOutput</span><span class="p">(</span><span class="n">v</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Кодът използва &#8220;вмъкване на тип&#8221; (<tt class="docutils literal"><span class="pre">v.(Stringer)</span></tt>), за да тества дали стойността записана в <tt class="docutils literal"><span class="pre">v</span></tt> удовлетворява
+<tt class="docutils literal"><span class="pre">Stringer</span></tt> интерфейса; ако не го, <tt class="docutils literal"><span class="pre">s</span></tt> ще стане интерфейс променлива имплементираща метода и <tt class="docutils literal"><span class="pre">ok</span></tt> ще бъде
+вярно (true). След това използваме интерфейс променливата, за да извикаме метода. Ако стойността не удовлетворява
+интерфейса, <tt class="docutils literal"><span class="pre">ok</span></tt> ще бъде не вярно (false).</p>
+<p>В този код името <tt class="docutils literal"><span class="pre">Stringer</span></tt> следва конвенцията, че добавяме <tt class="docutils literal"><span class="pre">&quot;[e]r&quot;</span></tt> към интерфейси описващи просто методи
+като този.</p>
+<p>Подобен интерфейс е този дефиниран от вградения тип <tt class="docutils literal"><span class="pre">error</span></tt>, който просто</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">type</span> <span class="n">error</span> <span class="k">interface</span> <span class="p">{</span>
+    <span class="n">Error</span><span class="p">()</span> <span class="nb">string</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Освен името на метода (<tt class="docutils literal"><span class="pre">Error</span></tt> срещу <tt class="docutils literal"><span class="pre">Stringer</span></tt>), това изглежда точно като <tt class="docutils literal"><span class="pre">Stringer</span></tt>; различното име
+ганратира, че типовете имплементиращи <tt class="docutils literal"><span class="pre">Stringer</span></tt> няма по случайност да задоволят <tt class="docutils literal"><span class="pre">error</span></tt> интерфейса.
+Естествено <tt class="docutils literal"><span class="pre">Printf</span></tt> и недовите прибличени разпознават <tt class="docutils literal"><span class="pre">error</span></tt> интерфейса, така както разпознавата <tt class="docutils literal"><span class="pre">Stringer</span></tt>,
+затова е и тривиално да се принтира грешка като стринг.</p>
+<p>Една последна добавка. За да приключим въпроса, освен <tt class="docutils literal"><span class="pre">Printf</span></tt> и др, и <tt class="docutils literal"><span class="pre">Sprintf</span></tt> и др. има и <tt class="docutils literal"><span class="pre">Fprintf</span></tt> и др.
+За разлика от C при <tt class="docutils literal"><span class="pre">Fprintf</span></tt> първият аргумент не е файл, вместо това е променлива от тип <tt class="docutils literal"><span class="pre">io.Writer</span></tt>,
+която е тип интерфейс, дефиниран в <tt class="docutils literal"><span class="pre">io</span></tt> библиотеката.</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">type</span> <span class="n">Writer</span> <span class="k">interface</span> <span class="p">{</span>
+    <span class="n">Write</span><span class="p">(</span><span class="n">p</span> <span class="p">[]</span><span class="nb">byte</span><span class="p">)</span> <span class="p">(</span><span class="n">n</span> <span class="nb">int</span><span class="p">,</span> <span class="n">err</span> <span class="n">error</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>(Този интерфейсе друго конвенционално име, този път за <tt class="docutils literal"><span class="pre">Writ</span></tt>; същестуват още <tt class="docutils literal"><span class="pre">.io.Reader</span></tt>, <tt class="docutils literal"><span class="pre">.io.ReadWrtier</span></tt>
+и т.н.) По този начин можете да извикате <tt class="docutils literal"><span class="pre">Fprintf</span></tt> върху всеки тип, имплементиращ <tt class="docutils literal"><span class="pre">Write</span></tt> метод, не само
+файлове, но и мрежови канали, буфери и каквото още поискате.</p>
+</div>
+<div class="section" id="id24">
+<h2>Прости числа<a class="headerlink" href="#id24" title="Постоянна връзка до това заглавие">¶</a></h2>
+<p>Вече стигаме до процеси и комуникация - конкурентно програмиране. Това е важна тема и за да бъдем кратки очакваме
+малко запознатост със заглавието.</p>
+<p>Класическа програма в този стил е <strong>prime sieve</strong> (Ситото на Аристотел е изчислително по-ефикасно от представения
+тук алгоритъм, но ние сме по-заинтересовани от конкурентност, отколкото от алгоритми в момента.) Работи като се
+вземе поток от всички естествени числа и представяме редица филтри, един за всеки прим, да показва множеството
+на този прим. На всяка стъпка имаме последователност от тези филтри на простите числа до сега, и следващото
+число, което трябва да извадим е следващото просто число, което стартира създаването на следващия филтър във
+веригата.</p>
+<p>Това е диаграма на процеса, всяка кутия представлява филтър, чието създаване се включва от първото число, което е
+последвало от предишния елемент.</p>
+<img alt="_images/sieve.gif" src="_images/sieve.gif" />
+<p>За да създадем поток от числа, използваме Go <em>канал</em>, която, заемайки от потомци на CSP, представлява
+комуникационен канал, който може да свърже две конкурентни изчисления. В Go, каналните променливи се представляват
+от обект по време на изпълнението, който координира комуникацията; както с карти и изрезки използваме <tt class="docutils literal"><span class="pre">make</span></tt>, за
+да създадем нов канал.</p>
+<p>Това е първата функция в <tt class="docutils literal"><span class="pre">progs/sieve.go</span></tt>:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="c1">// Изпраща потока 2, 3, 4, ... до канал &#39;ch&#39;.</span>
+<span class="k">func</span> <span class="n">generate</span><span class="p">(</span><span class="n">ch</span> <span class="k">chan</span> <span class="nb">int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="p">:=</span> <span class="mi">2</span><span class="p">;</span> <span class="p">;</span> <span class="n">i</span><span class="p">++</span> <span class="p">{</span>
+        <span class="n">ch</span> <span class="p">&lt;-</span> <span class="n">i</span> <span class="c1">// Send &#39;i&#39; to channel &#39;ch&#39;.</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Функцията <tt class="docutils literal"><span class="pre">generate</span></tt> изпраща поток от 2, 3, 4, 5, 6 ... до канала в аргумента, <tt class="docutils literal"><span class="pre">ch</span></tt>, използвайки оператора
+за двоична комуникация <tt class="docutils literal"><span class="pre">&lt;-</span></tt>. Така ако не съществува приемник за стойността на <tt class="docutils literal"><span class="pre">ch</span></tt>, изпращащата операция ще чака,
+докато не се появи такъв.</p>
+<p><tt class="docutils literal"><span class="pre">filter</span></tt> функцията има три аргумента: приемен канал, изходен канал и просто число. Копира стойността от входа в изхода,
+изключвайки всичко делимо от прим числото. Унарният комуникационен оператор <tt class="docutils literal"><span class="pre">&lt;-</span></tt> (получи) изтегля следващата стойност от
+канала.</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="c1">// Копира стойностите от канал &#39;in&#39; в канал &#39;out&#39;,</span>
+<span class="c1">// премахвайки онези, делими от &#39;prime&#39;.</span>
+<span class="k">func</span> <span class="n">filter</span><span class="p">(</span><span class="n">in</span><span class="p">,</span> <span class="n">out</span> <span class="k">chan</span> <span class="nb">int</span><span class="p">,</span> <span class="n">prime</span> <span class="nb">int</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">{</span>
+        <span class="n">i</span> <span class="p">:=</span> <span class="p">&lt;-</span><span class="n">in</span> <span class="c1">// получава стойност на нова променлива &#39;i&#39; от &#39;in&#39;.</span>
+        <span class="k">if</span> <span class="n">i</span><span class="p">%</span><span class="n">prime</span> <span class="p">!=</span> <span class="mi">0</span> <span class="p">{</span>
+            <span class="n">out</span> <span class="p">&lt;-</span> <span class="n">i</span> <span class="c1">// Изпрати &#39;i&#39; до канал &#39;out&#39;.</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Генераторът и филтърът се изпълняват конкурентно. Go има свой собствен модел за процеси/нишки/леки процеси/попрограми,
+така за да се пропусне объркване в нотацията в Go наричаме конкурентно изпълнимите изчисления - goroutines. За да
+стартирате goroutine, извиквате функцията като добавяте за префикс ключовата дума <tt class="docutils literal"><span class="pre">go</span></tt>. Това стартира функцията,
+изпълнявайки я паралелно с конкурентното изчисление, но в същото адресно пространство:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">go</span> <span class="n">sum</span><span class="p">(</span><span class="n">hugeArray</span><span class="p">)</span> <span class="c1">// калкулира сумата във фона</span>
+</pre></div>
+</div>
+<p>ако искате да разберете кога изчислението е приключило, подайте канал, на който може да се отговори:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="n">ch</span> <span class="p">:=</span> <span class="nb">make</span><span class="p">(</span><span class="k">chan</span> <span class="nb">int</span><span class="p">)</span>
+<span class="k">go</span> <span class="n">sum</span><span class="p">(</span><span class="n">hugeArray</span><span class="p">,</span> <span class="n">ch</span><span class="p">)</span>
+<span class="c1">// ... прави нещо друго за момент</span>
+<span class="n">result</span> <span class="p">:=</span> <span class="p">&lt;-</span><span class="n">ch</span>  <span class="c1">// изчакай за, и изтегли, резултата</span>
+</pre></div>
+</div>
+<p>Обратно към нашето сито за прости числа. Ето как е свързан поточния канал на ситото:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">ch</span> <span class="p">:=</span> <span class="nb">make</span><span class="p">(</span><span class="k">chan</span> <span class="nb">int</span><span class="p">)</span>       <span class="c1">// Създавне на нов канал.</span>
+    <span class="k">go</span> <span class="n">generate</span><span class="p">(</span><span class="n">ch</span><span class="p">)</span>            <span class="c1">// Стартира generate() като goroutine.</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="p">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="mi">100</span><span class="p">;</span> <span class="n">i</span><span class="p">++</span> <span class="p">{</span> <span class="c1">// Принтира първите 100 резултата.</span>
+        <span class="n">prime</span> <span class="p">:=</span> <span class="p">&lt;-</span><span class="n">ch</span>
+        <span class="n">fmt</span><span class="p">.</span><span class="n">Println</span><span class="p">(</span><span class="n">prime</span><span class="p">)</span>
+        <span class="n">ch1</span> <span class="p">:=</span> <span class="nb">make</span><span class="p">(</span><span class="k">chan</span> <span class="nb">int</span><span class="p">)</span>
+        <span class="k">go</span> <span class="n">filter</span><span class="p">(</span><span class="n">ch</span><span class="p">,</span> <span class="n">ch1</span><span class="p">,</span> <span class="n">prime</span><span class="p">)</span>
+        <span class="n">ch</span> <span class="p">=</span> <span class="n">ch1</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Първият ред от <tt class="docutils literal"><span class="pre">main</span></tt> създава основния канал, който да подадем към <tt class="docutils literal"><span class="pre">generate</span></tt>, който последия стартира. Когато се появи
+ново просто число от канала, се добавя нов филтър към потока и неговия изход става новата стойност на <tt class="docutils literal"><span class="pre">ch</span></tt>.</p>
+<p>Програмата със ситото може да бъде настроена да използва макет, сходен с този стил на програмиране. Това е примерна версия
+<tt class="docutils literal"><span class="pre">generate</span></tt>, от <tt class="docutils literal"><span class="pre">progs/sieve1.go</span></tt>:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">func</span> <span class="n">generate</span><span class="p">()</span> <span class="k">chan</span> <span class="nb">int</span> <span class="p">{</span>
+    <span class="n">ch</span> <span class="p">:=</span> <span class="nb">make</span><span class="p">(</span><span class="k">chan</span> <span class="nb">int</span><span class="p">)</span>
+    <span class="k">go</span> <span class="k">func</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="p">:=</span> <span class="mi">2</span><span class="p">;</span> <span class="p">;</span> <span class="n">i</span><span class="p">++</span> <span class="p">{</span>
+            <span class="n">ch</span> <span class="p">&lt;-</span> <span class="n">i</span>
+        <span class="p">}</span>
+    <span class="p">}()</span>
+    <span class="k">return</span> <span class="n">ch</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Тази версия прави всичките настройки вътрешно. Създава изходния канал, стартира goroutine изпълнявана на функционен литерал
+и връща канал до повикалия. Това е фабрика за конкурентно изпълнение, стартиране на go-рутина и връщане на нейната
+връзка.</p>
+<p>Нотацията на функционалния литерал, използвана в <tt class="docutils literal"><span class="pre">go</span></tt> заявката ни позволява да създадем анонимна функция и да я изпълним
+на място. Забележете, че локалната променлива ch е достъпна за функционалния литерал и продължава да живее след като
+<tt class="docutils literal"><span class="pre">generate</span></tt> върне резултат.</p>
+<p>Същата промяна може да бъде направена и във <tt class="docutils literal"><span class="pre">filter</span></tt>:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">func</span> <span class="n">filter</span><span class="p">(</span><span class="n">in</span> <span class="k">chan</span> <span class="nb">int</span><span class="p">,</span> <span class="n">prime</span> <span class="nb">int</span><span class="p">)</span> <span class="k">chan</span> <span class="nb">int</span> <span class="p">{</span>
+    <span class="n">out</span> <span class="p">:=</span> <span class="nb">make</span><span class="p">(</span><span class="k">chan</span> <span class="nb">int</span><span class="p">)</span>
+    <span class="k">go</span> <span class="k">func</span><span class="p">()</span> <span class="p">{</span>
+        <span class="k">for</span> <span class="p">{</span>
+            <span class="k">if</span> <span class="n">i</span> <span class="p">:=</span> <span class="p">&lt;-</span><span class="n">in</span><span class="p">;</span> <span class="n">i</span><span class="p">%</span><span class="n">prime</span> <span class="p">!=</span> <span class="mi">0</span> <span class="p">{</span>
+                <span class="n">out</span> <span class="p">&lt;-</span> <span class="n">i</span>
+            <span class="p">}</span>
+        <span class="p">}</span>
+    <span class="p">}()</span>
+    <span class="k">return</span> <span class="n">out</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><tt class="docutils literal"><span class="pre">sieve</span></tt> функцията в основния цикъл става по-проста и ясна като резултат и докато сме на нея нека и нея я превърнем във
+фабрика:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">func</span> <span class="n">sieve</span><span class="p">()</span> <span class="k">chan</span> <span class="nb">int</span> <span class="p">{</span>
+    <span class="n">out</span> <span class="p">:=</span> <span class="nb">make</span><span class="p">(</span><span class="k">chan</span> <span class="nb">int</span><span class="p">)</span>
+    <span class="k">go</span> <span class="k">func</span><span class="p">()</span> <span class="p">{</span>
+        <span class="n">ch</span> <span class="p">:=</span> <span class="n">generate</span><span class="p">()</span>
+        <span class="k">for</span> <span class="p">{</span>
+            <span class="n">prime</span> <span class="p">:=</span> <span class="p">&lt;-</span><span class="n">ch</span>
+            <span class="n">out</span> <span class="p">&lt;-</span> <span class="n">prime</span>
+            <span class="n">ch</span> <span class="p">=</span> <span class="n">filter</span><span class="p">(</span><span class="n">ch</span><span class="p">,</span> <span class="n">prime</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}()</span>
+    <span class="k">return</span> <span class="n">out</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Сега интерфейсът на <tt class="docutils literal"><span class="pre">main</span></tt> към ситото на прости числа е канал от прости числа:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">primes</span> <span class="p">:=</span> <span class="n">sieve</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="p">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="mi">100</span><span class="p">;</span> <span class="n">i</span><span class="p">++</span> <span class="p">{</span> <span class="c1">// Print the first hundred primes.</span>
+        <span class="n">fmt</span><span class="p">.</span><span class="n">Println</span><span class="p">(&lt;-</span><span class="n">primes</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="id25">
+<h2>Мултиплексиране<a class="headerlink" href="#id25" title="Постоянна връзка до това заглавие">¶</a></h2>
+<p>С канали е възможно да обслужвате няколко независими клиентни go-рутини без да се налага да пишете отделен мултиплексър.
+Трикът в това е да изпратите канал в съобщението до сървъра, който той след това ще използва, за да отговори на оригиналния
+изпращач. Реалистична клиент-сървър програма е свързана с много код, за това тук е много прост заместитл, който да
+илюстрира идеята. Стартира с дефинирането на <tt class="docutils literal"><span class="pre">request</span></tt> тип, съдържащ канал, който ще бъде използван за отговор.</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">type</span> <span class="n">request</span> <span class="k">struct</span> <span class="p">{</span>
+    <span class="n">a</span><span class="p">,</span> <span class="n">b</span>   <span class="nb">int</span>
+    <span class="n">replyc</span> <span class="k">chan</span> <span class="nb">int</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Сървърът ще бъде тривиален: ще извърша прости двоични действия върху числа. Това е кодът, който стартира операцията и
+отговаря на заявката:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">type</span> <span class="n">binOp</span> <span class="k">func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="nb">int</span><span class="p">)</span> <span class="nb">int</span>
+
+<span class="k">func</span> <span class="n">run</span><span class="p">(</span><span class="n">op</span> <span class="n">binOp</span><span class="p">,</span> <span class="n">req</span> <span class="p">*</span><span class="n">request</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">reply</span> <span class="p">:=</span> <span class="n">op</span><span class="p">(</span><span class="n">req</span><span class="p">.</span><span class="n">a</span><span class="p">,</span> <span class="n">req</span><span class="p">.</span><span class="n">b</span><span class="p">)</span>
+    <span class="n">req</span><span class="p">.</span><span class="n">replyc</span> <span class="p">&lt;-</span> <span class="n">reply</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><a href="#id26"><span class="problematic" id="id27">**</span></a></p>
+<p>Декларацията на тип прави <tt class="docutils literal"><span class="pre">binOp</span></tt> да представлява функция, която приема две числа и връща трето.</p>
+<p><tt class="docutils literal"><span class="pre">server</span></tt> рутината е в постоянен цикъл, получавайки заявки и, за да избегне блокиране поради дълга рутинна операция,
+стартира go-рутина, която да изпълнява реалната работа.</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">func</span> <span class="n">server</span><span class="p">(</span><span class="n">op</span> <span class="n">binOp</span><span class="p">,</span> <span class="n">service</span> <span class="p">&lt;-</span><span class="k">chan</span> <span class="p">*</span><span class="n">request</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">{</span>
+        <span class="n">req</span> <span class="p">:=</span> <span class="p">&lt;-</span><span class="n">service</span>
+        <span class="k">go</span> <span class="n">run</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">req</span><span class="p">)</span> <span class="c1">// don&#39;t wait for it</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><a href="#id28"><span class="problematic" id="id29">**</span></a></p>
+<p>Има нова особеност в подписа на <tt class="docutils literal"><span class="pre">server</span></tt>: типът на <tt class="docutils literal"><span class="pre">service</span></tt> канал определя посоката на комуникация. Канал от прост
+<tt class="docutils literal"><span class="pre">chan</span></tt> тип може да бъде използван и за изпращане, и за получаване. Типът използван за деклариране на канал, обаче, може
+да бъде декориран със стрелка, която да посочва, че канала може да бъде използван само да изпраща (<tt class="docutils literal"><span class="pre">chan&lt;-</span></tt>) или
+получава (<tt class="docutils literal"><span class="pre">&lt;-chan</span></tt>) данни. Стрелката показва към или извън от <tt class="docutils literal"><span class="pre">chan</span></tt>, за да посочи дали данните текът към или извън
+канала. Във функцията <tt class="docutils literal"><span class="pre">server</span></tt>, <tt class="docutils literal"><span class="pre">service</span> <span class="pre">&lt;-chan</span> <span class="pre">*</span> <span class="pre">request</span></tt> е канал &#8220;само за получаване&#8221;, който функцията може да
+позлва само за четене на нови заявки.</p>
+<p>Инициализираме сървър по познат начин, стартирайки го и връщайки канал, свързан към него:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">func</span> <span class="n">startServer</span><span class="p">(</span><span class="n">op</span> <span class="n">binOp</span><span class="p">)</span> <span class="k">chan</span><span class="p">&lt;-</span> <span class="p">*</span><span class="n">request</span> <span class="p">{</span>
+    <span class="n">req</span> <span class="p">:=</span> <span class="nb">make</span><span class="p">(</span><span class="k">chan</span> <span class="p">*</span><span class="n">request</span><span class="p">)</span>
+    <span class="k">go</span> <span class="n">server</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">req</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">req</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><a href="#id30"><span class="problematic" id="id31">**</span></a></p>
+<p>Върнатият канал е &#8220;само за изпращане&#8221; въпреки, че канала беше създаден двустранен. Краят за четене се праща до <tt class="docutils literal"><span class="pre">server</span></tt>,
+докато краят за изпращане се връща до стартиращия  <tt class="docutils literal"><span class="pre">startServer</span></tt>, по този начин двете половини на канала са
+определени, точно както направихме в <tt class="docutils literal"><span class="pre">startServer</span></tt>.</p>
+<p>Двупосочни канали могат да бъдат назначавани към еднопосочни канали, но не и обратно, така че ако посочите посоките на
+вашия канал, когато го декларирате, например в подписа на функция, типовата система може да ви помогне да настроите
+и използвате каналите правилно. Забележете, че е безсмислено да <tt class="docutils literal"><span class="pre">make</span></tt> (правите) еднопосочни канали, тъй като не
+можете да ги използвате за комуникация. Тяхната цел се изпълнява от променливи назначени от двупосочни канали, за да
+определят входнитите и изходните половини.</p>
+<p>Това е малък тест. Стартира сървъра с допълнителен оператор и изпраща <tt class="docutils literal"><span class="pre">N</span></tt> заявки, без да чака за отговори. Само след
+като всички заявки са изпратени, прави проверка за резултати.</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">adder</span> <span class="p">:=</span> <span class="n">startServer</span><span class="p">(</span><span class="k">func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="nb">int</span><span class="p">)</span> <span class="nb">int</span> <span class="p">{</span> <span class="k">return</span> <span class="n">a</span> <span class="p">+</span> <span class="n">b</span> <span class="p">})</span>
+    <span class="k">const</span> <span class="n">N</span> <span class="p">=</span> <span class="mi">100</span>
+    <span class="k">var</span> <span class="n">reqs</span> <span class="p">[</span><span class="n">N</span><span class="p">]</span><span class="n">request</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="p">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">N</span><span class="p">;</span> <span class="n">i</span><span class="p">++</span> <span class="p">{</span>
+        <span class="n">req</span> <span class="p">:=</span> <span class="p">&amp;</span><span class="n">reqs</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+        <span class="n">req</span><span class="p">.</span><span class="n">a</span> <span class="p">=</span> <span class="n">i</span>
+        <span class="n">req</span><span class="p">.</span><span class="n">b</span> <span class="p">=</span> <span class="n">i</span> <span class="p">+</span> <span class="n">N</span>
+        <span class="n">req</span><span class="p">.</span><span class="n">replyc</span> <span class="p">=</span> <span class="nb">make</span><span class="p">(</span><span class="k">chan</span> <span class="nb">int</span><span class="p">)</span>
+        <span class="n">adder</span> <span class="p">&lt;-</span> <span class="n">req</span>
+    <span class="p">}</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="p">:=</span> <span class="n">N</span> <span class="p">-</span> <span class="mi">1</span><span class="p">;</span> <span class="n">i</span> <span class="p">&gt;=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span><span class="p">--</span> <span class="p">{</span> <span class="c1">// doesn&#39;t matter what order</span>
+        <span class="k">if</span> <span class="p">&lt;-</span><span class="n">reqs</span><span class="p">[</span><span class="n">i</span><span class="p">].</span><span class="n">replyc</span> <span class="p">!=</span> <span class="n">N</span><span class="p">+</span><span class="mi">2</span><span class="p">*</span><span class="n">i</span> <span class="p">{</span>
+            <span class="n">fmt</span><span class="p">.</span><span class="n">Println</span><span class="p">(</span><span class="s">&quot;fail at&quot;</span><span class="p">,</span> <span class="n">i</span><span class="p">)</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+    <span class="n">fmt</span><span class="p">.</span><span class="n">Println</span><span class="p">(</span><span class="s">&quot;done&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Една дразнеща част в програмата е, че не изключва чисот сървъра; когато <tt class="docutils literal"><span class="pre">main</span></tt> върне отговор, има голям брой бавни
+go-рутини бокирани от комуникация. За да решим това, можем да прдоставим втори, <tt class="docutils literal"><span class="pre">quit</span></tt> канал в сървъра:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">func</span> <span class="n">startServer</span><span class="p">(</span><span class="n">op</span> <span class="n">binOp</span><span class="p">)</span> <span class="p">(</span><span class="n">service</span> <span class="k">chan</span> <span class="p">*</span><span class="n">request</span><span class="p">,</span> <span class="n">quit</span> <span class="k">chan</span> <span class="n">bool</span><span class="p">)</span> <span class="p">{</span>
+    <span class="n">service</span> <span class="p">=</span> <span class="nb">make</span><span class="p">(</span><span class="k">chan</span> <span class="p">*</span><span class="n">request</span><span class="p">)</span>
+    <span class="n">quit</span> <span class="p">=</span> <span class="nb">make</span><span class="p">(</span><span class="k">chan</span> <span class="n">bool</span><span class="p">)</span>
+    <span class="k">go</span> <span class="n">server</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">service</span><span class="p">,</span> <span class="n">quit</span><span class="p">)</span>
+    <span class="k">return</span> <span class="n">service</span><span class="p">,</span> <span class="n">quit</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><a href="#id32"><span class="problematic" id="id33">**</span></a></p>
+<p>Изпраща quit канала към <tt class="docutils literal"><span class="pre">server</span></tt> функцията, която го използва така:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">func</span> <span class="n">server</span><span class="p">(</span><span class="n">op</span> <span class="n">binOp</span><span class="p">,</span> <span class="n">service</span> <span class="p">&lt;-</span><span class="k">chan</span> <span class="p">*</span><span class="n">request</span><span class="p">,</span> <span class="n">quit</span> <span class="p">&lt;-</span><span class="k">chan</span> <span class="n">bool</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">{</span>
+        <span class="k">select</span> <span class="p">{</span>
+        <span class="k">case</span> <span class="n">req</span> <span class="p">:=</span> <span class="p">&lt;-</span><span class="n">service</span><span class="p">:</span>
+            <span class="k">go</span> <span class="n">run</span><span class="p">(</span><span class="n">op</span><span class="p">,</span> <span class="n">req</span><span class="p">)</span> <span class="c1">// don&#39;t wait for it</span>
+        <span class="k">case</span> <span class="p">&lt;-</span><span class="n">quit</span><span class="p">:</span>
+            <span class="k">return</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p><a href="#id34"><span class="problematic" id="id35">**</span></a></p>
+<p>В <tt class="docutils literal"><span class="pre">server</span></tt>, заявката <tt class="docutils literal"><span class="pre">select</span></tt> избира коя от многото комуникации в списъка от случаи може да продължи. Ако всички са
+блокирани изчаква, докато някоя може да продължи; ако много могат да продължат, избира една произволна. В тази инстанция
+<tt class="docutils literal"><span class="pre">select</span></tt> позволява на сървъра да уважава заявки докато не получи съобщение за изход (quit), в този момент връща и
+прекратява изпълнението.</p>
+<p>Всичко, което остава е да добавим <tt class="docutils literal"><span class="pre">quit</span></tt> канала в края на <tt class="docutils literal"><span class="pre">main</span></tt>:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="n">adder</span><span class="p">,</span> <span class="n">quit</span> <span class="p">:=</span> <span class="n">startServer</span><span class="p">(</span><span class="k">func</span><span class="p">(</span><span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="nb">int</span><span class="p">)</span> <span class="nb">int</span> <span class="p">{</span> <span class="k">return</span> <span class="n">a</span> <span class="p">+</span> <span class="n">b</span> <span class="p">})</span>
+</pre></div>
+</div>
+<p>...</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="n">quit</span> <span class="p">&lt;-</span> <span class="n">true</span>
+</pre></div>
+</div>
+<p>Има още много относно Go програмирането и конкурентното програмиране като цяло, но този кратък обзор би трябвало да
+ви е дал някои от основите.</p>
 </div>
 </div>
 
@@ -344,7 +1153,7 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="index.html">Table Of Contents</a></h3>
+  <h3><a href="index.html">Съдържание</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Въведение в програмния език Go</a><ul>
 <li><a class="reference internal" href="#id1">Предговор</a></li>
@@ -355,31 +1164,37 @@
 <li><a class="reference internal" href="#id8">Антракт относно типове</a></li>
 <li><a class="reference internal" href="#id9">Антракт относно алокация</a></li>
 <li><a class="reference internal" href="#id10">Антракт към константи</a></li>
+<li><a class="reference internal" href="#i-o">I/O Пакет</a></li>
+<li><a class="reference internal" href="#id13">Гниещи котки</a></li>
+<li><a class="reference internal" href="#id18">Сортиране</a></li>
+<li><a class="reference internal" href="#id21">Принтиране</a></li>
+<li><a class="reference internal" href="#id24">Прости числа</a></li>
+<li><a class="reference internal" href="#id25">Мултиплексиране</a></li>
 </ul>
 </li>
 </ul>
 
-  <h4>Previous topic</h4>
+  <h4>Предишна тема</h4>
   <p class="topless"><a href="index.html"
-                        title="previous chapter">Въведение в Go</a></p>
-  <h4>Next topic</h4>
+                        title="Ппредишна глава">Въведение в Go</a></p>
+  <h4>Следваща тема</h4>
   <p class="topless"><a href="effective_go.html"
-                        title="next chapter">Ефективен Go</a></p>
-  <h3>This Page</h3>
+                        title="следваща глава">Ефективен Go</a></p>
+  <h3>Тази страница</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/go_tutorial.txt"
-           rel="nofollow">Show Source</a></li>
+           rel="nofollow">Покажи кода</a></li>
   </ul>
 <div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
+  <h3>Бързо търсене</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <input type="submit" value="Давай" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
     <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
+    Въведете понятията за търсене иили едно име на модул, клас или функция.
     </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
@@ -388,23 +1203,23 @@
       <div class="clearer"></div>
     </div>
     <div class="related">
-      <h3>Navigation</h3>
+      <h3>Навигация</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
+          <a href="genindex.html" title="Общ индекс"
+             >индекс</a></li>
         <li class="right" >
           <a href="effective_go.html" title="Ефективен Go"
-             >next</a> |</li>
+             >напред</a> |</li>
         <li class="right" >
           <a href="index.html" title="Въведение в Go"
-             >previous</a> |</li>
-        <li><a href="index.html">Въведение в Go 1.0a documentation</a> &raquo;</li> 
+             >назад</a> |</li>
+        <li><a href="index.html">Въведение в Go 1.0a документация</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2012, Владимир Колев.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
+      Създадена с <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
     </div>
   </body>
 </html>

@@ -7,7 +7,7 @@
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     
-    <title>Въведение в Go &mdash; Въведение в Go 1.0a documentation</title>
+    <title>Въведение в Go &mdash; Въведение в Go 1.0a документация</title>
     
     <link rel="stylesheet" href="_static/nature.css" type="text/css" />
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
@@ -24,20 +24,21 @@
     <script type="text/javascript" src="_static/jquery.js"></script>
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="Въведение в Go 1.0a documentation" href="#" />
+    <script type="text/javascript" src="_static/translations.js"></script>
+    <link rel="top" title="Въведение в Go 1.0a документация" href="#" />
     <link rel="next" title="Въведение в програмния език Go" href="go_tutorial.html" /> 
   </head>
   <body>
     <div class="related">
-      <h3>Navigation</h3>
+      <h3>Навигация</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
+          <a href="genindex.html" title="Общ индекс"
+             accesskey="I">индекс</a></li>
         <li class="right" >
           <a href="go_tutorial.html" title="Въведение в програмния език Go"
-             accesskey="N">next</a> |</li>
-        <li><a href="#">Въведение в Go 1.0a documentation</a> &raquo;</li> 
+             accesskey="N">напред</a> |</li>
+        <li><a href="#">Въведение в Go 1.0a документация</a> &raquo;</li> 
       </ul>
     </div>  
 
@@ -47,10 +48,10 @@
           <div class="body">
             
   <div class="section" id="go">
-<h1>Въведение в Go<a class="headerlink" href="#go" title="Permalink to this headline">¶</a></h1>
+<h1>Въведение в Go<a class="headerlink" href="#go" title="Постоянна връзка до това заглавие">¶</a></h1>
 <img alt="_images/gopher.jpg" class="align-center" src="_images/gopher.jpg" />
 <div class="section" id="id1">
-<h2>Съдържание:<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>Съдържание:<a class="headerlink" href="#id1" title="Постоянна връзка до това заглавие">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="go_tutorial.html">Въведение в програмния език Go</a><ul>
@@ -62,10 +63,37 @@
 <li class="toctree-l2"><a class="reference internal" href="go_tutorial.html#id8">Антракт относно типове</a></li>
 <li class="toctree-l2"><a class="reference internal" href="go_tutorial.html#id9">Антракт относно алокация</a></li>
 <li class="toctree-l2"><a class="reference internal" href="go_tutorial.html#id10">Антракт към константи</a></li>
+<li class="toctree-l2"><a class="reference internal" href="go_tutorial.html#i-o">I/O Пакет</a></li>
+<li class="toctree-l2"><a class="reference internal" href="go_tutorial.html#id13">Гниещи котки</a></li>
+<li class="toctree-l2"><a class="reference internal" href="go_tutorial.html#id18">Сортиране</a></li>
+<li class="toctree-l2"><a class="reference internal" href="go_tutorial.html#id21">Принтиране</a></li>
+<li class="toctree-l2"><a class="reference internal" href="go_tutorial.html#id24">Прости числа</a></li>
+<li class="toctree-l2"><a class="reference internal" href="go_tutorial.html#id25">Мултиплексиране</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="effective_go.html">Ефективен Go</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="effective_go.html#id1">Въведение</a></li>
+<li class="toctree-l2"><a class="reference internal" href="effective_go.html#id1">Въведение</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="effective_go.html#id2">Примери</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="effective_go.html#id3">Форматиране</a></li>
+<li class="toctree-l2"><a class="reference internal" href="effective_go.html#id4">Коментари</a></li>
+<li class="toctree-l2"><a class="reference internal" href="effective_go.html#id5">Имена</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="effective_go.html#id6">Имена на пакети</a></li>
+<li class="toctree-l3"><a class="reference internal" href="effective_go.html#getters">Getters</a></li>
+<li class="toctree-l3"><a class="reference internal" href="effective_go.html#id7">Имена на интерфейси</a></li>
+<li class="toctree-l3"><a class="reference internal" href="effective_go.html#id8">Миксирани главни</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="effective_go.html#id9">Точки и запетаи</a></li>
+<li class="toctree-l2"><a class="reference internal" href="effective_go.html#id10">Контролни структури</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="effective_go.html#if">If</a></li>
+<li class="toctree-l3"><a class="reference internal" href="effective_go.html#id11">Предеклариране</a></li>
+<li class="toctree-l3"><a class="reference internal" href="effective_go.html#for">For</a></li>
+<li class="toctree-l3"><a class="reference internal" href="effective_go.html#switch">Switch</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="effective_go.html#id12">Функции</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="how_to_write.html">Как да пишете Go код</a></li>
@@ -74,10 +102,10 @@
 </div>
 </div>
 <div class="section" id="id2">
-<h1>Индекси и Таблици<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
+<h1>Индекси и Таблици<a class="headerlink" href="#id2" title="Постоянна връзка до това заглавие">¶</a></h1>
 <ul class="simple">
-<li><a class="reference internal" href="genindex.html"><em>Index</em></a></li>
-<li><a class="reference internal" href="search.html"><em>Search Page</em></a></li>
+<li><a class="reference internal" href="genindex.html"><em>Индекс</em></a></li>
+<li><a class="reference internal" href="search.html"><em>Търсене</em></a></li>
 </ul>
 </div>
 
@@ -87,7 +115,7 @@
       </div>
       <div class="sphinxsidebar">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="#">Table Of Contents</a></h3>
+  <h3><a href="#">Съдържание</a></h3>
   <ul>
 <li><a class="reference internal" href="#">Въведение в Go</a><ul>
 <li><a class="reference internal" href="#id1">Съдържание:</a><ul>
@@ -98,24 +126,24 @@
 <li><a class="reference internal" href="#id2">Индекси и Таблици</a></li>
 </ul>
 
-  <h4>Next topic</h4>
+  <h4>Следваща тема</h4>
   <p class="topless"><a href="go_tutorial.html"
-                        title="next chapter">Въведение в програмния език Go</a></p>
-  <h3>This Page</h3>
+                        title="следваща глава">Въведение в програмния език Go</a></p>
+  <h3>Тази страница</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/index.txt"
-           rel="nofollow">Show Source</a></li>
+           rel="nofollow">Покажи кода</a></li>
   </ul>
 <div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
+  <h3>Бързо търсене</h3>
     <form class="search" action="search.html" method="get">
       <input type="text" name="q" />
-      <input type="submit" value="Go" />
+      <input type="submit" value="Давай" />
       <input type="hidden" name="check_keywords" value="yes" />
       <input type="hidden" name="area" value="default" />
     </form>
     <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
+    Въведете понятията за търсене иили едно име на модул, клас или функция.
     </p>
 </div>
 <script type="text/javascript">$('#searchbox').show(0);</script>
@@ -124,20 +152,20 @@
       <div class="clearer"></div>
     </div>
     <div class="related">
-      <h3>Navigation</h3>
+      <h3>Навигация</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
+          <a href="genindex.html" title="Общ индекс"
+             >индекс</a></li>
         <li class="right" >
           <a href="go_tutorial.html" title="Въведение в програмния език Go"
-             >next</a> |</li>
-        <li><a href="#">Въведение в Go 1.0a documentation</a> &raquo;</li> 
+             >напред</a> |</li>
+        <li><a href="#">Въведение в Go 1.0a документация</a> &raquo;</li> 
       </ul>
     </div>
     <div class="footer">
         &copy; Copyright 2012, Владимир Колев.
-      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
+      Създадена с <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
     </div>
   </body>
 </html>

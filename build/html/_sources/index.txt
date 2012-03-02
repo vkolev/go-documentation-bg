@@ -13,7 +13,7 @@
 -----------
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    go_tutorial
    effective_go
