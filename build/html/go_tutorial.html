@@ -1,0 +1,217 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Въведение в програмния език Go &mdash; Въведение в Go 1.0a documentation</title>
+    
+    <link rel="stylesheet" href="_static/nature.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '',
+        VERSION:     '1.0a',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Въведение в Go 1.0a documentation" href="index.html" />
+    <link rel="prev" title="Въведение в Go" href="index.html" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="index.html" title="Въведение в Go"
+             accesskey="P">previous</a> |</li>
+        <li><a href="index.html">Въведение в Go 1.0a documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="go">
+<h1>Въведение в програмния език Go<a class="headerlink" href="#go" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id1">
+<h2>Предговор<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>Този документ е урок представящ основите на програмния език Go, предвиден за програмисти, запознати с C или C++.
+Това не е подробен наръчник за езика; до този момент най-близкия документ до това е <a class="reference external" href="http://weekly.golang.org/doc/go_spec.html">спецификацията на езика</a>.
+След като прочетете този урок, можете да продължите с <a class="reference external" href="http://weekly.golang.org/doc/effective_go.html">Ефективен Go</a>, който навлиза по-дълбоко в
+това как се използва езика и говори за стил и идиоми при програмирането с Go. Съществува и интерактивна интродукция в Go, наречена <a class="reference external" href="http://tour.golang.org/">Разходка в Go</a>.</p>
+<p>Презентацията тук преминава през серия от най-скромни програми, за да илюстрира основните особености на езика. Всички програми
+работят (в момента на писане) и са качени в хранилището в директория <a class="reference external" href="http://weekly.golang.org/doc/progs">/doc/progs/</a>.</p>
+</div>
+<div class="section" id="id5">
+<h2>Здравей свят<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h2>
+<p>Нека започнем по обичайния начин:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">package</span> <span class="n">main</span>
+
+<span class="n">mport</span> <span class="n">fmt</span> <span class="s">&quot;fmt&quot;</span> <span class="c1">// Пакет имплементиращ форматиран I/O.</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">fmt</span><span class="p">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">&quot;Здравей свят!; или Καλημέρα κόσμε; или こんにちは 世界\n&quot;</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Всеки файл с изходен код в Go, използвайки <tt class="docutils literal"><span class="pre">package</span></tt> изявлението, което показва към кой пакет принадлежи. Също така може да вмъква други пакети, за да
+използва техните удобства. Тази програма вмъква пакета <tt class="docutils literal"><span class="pre">fmt</span></tt>, за да добие достъп до нашия стар, сега с главна буква и пакетиран приятел, <tt class="docutils literal"><span class="pre">fmt.Printf</span></tt>.</p>
+<p>Функциите се представят с ключовата дума <tt class="docutils literal"><span class="pre">func</span></tt>. Функцията <tt class="docutils literal"><span class="pre">main</span></tt> в пакета <tt class="docutils literal"><span class="pre">main</span></tt> е мястото, където програмата се изпълнява (след всяко стартиране).</p>
+<p>Низови константи могат да съдържат уникод символи, кодирани в UTF-8. (Всъщност, изходните файлове на Go по дефиниця са кодирани в UTF-8)</p>
+<p>Конвенцията за писането на кометари е същата като при C++.</p>
+<p>По-късно ще споменем повече относно принтирането.</p>
+</div>
+<div class="section" id="id6">
+<h2>Точки и запетаи<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h2>
+<p>Може би сте забелязали, че в нашата програма няма точки и запетаи. В Go кода, единственото място в което вероятно ще използвате точки и запетаи е при
+разграничаването на клаузите във <tt class="docutils literal"><span class="pre">for</span></tt> цикъл и подобни; не са необходими след всяка заявка.</p>
+<p>Всъщност това, което се случва е, че формалният език използва точки и запетаи, както в C или Java, но те се добавят автоматично в края на всеки ред, който
+изглежда като край на заявка. Не е необходимо да ги въвеждате.</p>
+<p>За подробности как е направено това, можете да погледнете спецификацията на езика, но за практиката всичко, което трябва да знаете е, че никога няма да потребява
+да слагате точки и запетаи в края на ред. (Можете да ги поставяте ако искате да напишете няколко заявки на един ред). Като допълнителна помощ можете да
+поставяте точка и запетая веднага преди затварянето на скоба.</p>
+<p>Този подход спомага за код, който няма точки и запетаи и изглежда добре. Единствената изненада е, че е важно да поставяте отварящата къдрава скоба на конструктор
+като <tt class="docutils literal"><span class="pre">if</span></tt> на същия ред, на който е <tt class="docutils literal"><span class="pre">if</span></tt>; ако не направите това, съществуват ситуации, в които кода няма да се компилира или ще даде грешен резултат. Езикът
+налага този стил на къдрави скови до известна степен.</p>
+</div>
+<div class="section" id="id7">
+<h2>Компилиране<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h2>
+<p>Go е компилируем език. В момента същствуват два компилатора: <tt class="docutils literal"><span class="pre">Gccgo</span></tt> е Go компилатор, който използва за основа GCC. Има и пакет от компилатори с различни (и странни)
+имена за всяка архитектура: <tt class="docutils literal"><span class="pre">6g</span></tt> за 64-bit x86, 8g за 32-bit x86 и други. Тези компилатори работят значително по-бързо, но генерират по-малко ефикасен код, в
+сравнение с <tt class="docutils literal"><span class="pre">gccgo</span></tt>. В момента на писане (края на 2009), те имат и по-стабилна run-time система, въпреки, че gccgo наваксва.</p>
+<p>Ето как да компилираме и изпълним нашата програма. С 6g, казваме:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> 6g helloworld.go  <span class="c"># компилира; обекта отива в helloworld.6</span>
+<span class="gp">$</span> 6l helloworld.6   <span class="c"># линкер; изходът отива в 6.out</span>
+<span class="gp">$</span> ./6.out
+<span class="go">Здравей свят!; или Καλημέρα κόσμε; или こんにちは 世界</span>
+<span class="gp">$</span>
+</pre></div>
+</div>
+<p>С <tt class="docutils literal"><span class="pre">gccgo</span></tt> това изглежда малко по-традиционно:</p>
+<div class="highlight-console"><div class="highlight"><pre><span class="gp">$</span> gccgo helloworld.go
+<span class="gp">$</span> ./a.out
+<span class="go">Здравей свят!; или Καλημέρα κόσμε; или こんにちは 世界</span>
+<span class="gp">$</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="echo">
+<h2>Echo<a class="headerlink" href="#echo" title="Permalink to this headline">¶</a></h2>
+<p>Подред, това е версия на Unix инструмента <tt class="docutils literal"><span class="pre">echo(1)</span></tt>:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">package</span> <span class="n">main</span>
+
+<span class="k">import</span> <span class="p">(</span>
+    <span class="s">&quot;flag&quot;</span> <span class="c1">// четец за опции в командния ред</span>
+    <span class="s">&quot;os&quot;</span>
+<span class="p">)</span>
+
+<span class="k">var</span> <span class="n">omitNewline</span> <span class="p">=</span> <span class="n">flag</span><span class="p">.</span><span class="n">Bool</span><span class="p">(</span><span class="s">&quot;n&quot;</span><span class="p">,</span> <span class="n">false</span><span class="p">,</span> <span class="s">&quot;не разпечатвай последния нов ред&quot;</span><span class="p">)</span>
+
+<span class="k">const</span> <span class="p">(</span>
+    <span class="n">Space</span>   <span class="p">=</span> <span class="s">&quot; &quot;</span>
+    <span class="n">Newline</span> <span class="p">=</span> <span class="s">&quot;\n&quot;</span>
+<span class="p">)</span>
+
+<span class="k">func</span> <span class="n">main</span><span class="p">()</span> <span class="p">{</span>
+    <span class="n">flag</span><span class="p">.</span><span class="n">Parse</span><span class="p">()</span> <span class="c1">// Сканира списъка с аргументи и задава флагове</span>
+    <span class="k">var</span> <span class="n">s</span> <span class="nb">string</span> <span class="p">=</span> <span class="s">&quot;&quot;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="p">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">flag</span><span class="p">.</span><span class="n">NArg</span><span class="p">();</span> <span class="n">i</span><span class="p">++</span> <span class="p">{</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="p">&gt;</span> <span class="mi">0</span> <span class="p">{</span>
+            <span class="n">s</span> <span class="p">+=</span> <span class="n">Space</span>
+        <span class="p">}</span>
+        <span class="n">s</span> <span class="p">+=</span> <span class="n">flag</span><span class="p">.</span><span class="n">Arg</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="k">if</span> <span class="p">!*</span><span class="n">omitNewline</span> <span class="p">{</span>
+        <span class="n">s</span> <span class="p">+=</span> <span class="n">Newline</span>
+    <span class="p">}</span>
+    <span class="n">os</span><span class="p">.</span><span class="n">Stdout</span><span class="p">.</span><span class="n">WriteString</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Тази програма е малка, но прави много нови неща. В последния пример видяхме, че <tt class="docutils literal"><span class="pre">func</span></tt> представя функция.
+Ключовите думи <tt class="docutils literal"><span class="pre">var</span></tt>, <tt class="docutils literal"><span class="pre">const</span></tt> и <tt class="docutils literal"><span class="pre">type</span></tt> (не е използвана още) също представляват декларации, както и import.
+Забележете, че можем да групираме декларации от еднакъв тип в списъци, един елемент на ред, както <tt class="docutils literal"><span class="pre">import</span></tt> и
+<tt class="docutils literal"><span class="pre">const</span></tt> клаузите тук. Но не е задължително да се прави; бихме могли да кажем</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">const</span> <span class="n">Space</span> <span class="p">=</span> <span class="s">&quot; &quot;</span>
+<span class="k">const</span> <span class="n">Newline</span> <span class="p">=</span> <span class="s">&quot;\n&quot;</span>
+</pre></div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="index.html">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Въведение в програмния език Go</a><ul>
+<li><a class="reference internal" href="#id1">Предговор</a></li>
+<li><a class="reference internal" href="#id5">Здравей свят</a></li>
+<li><a class="reference internal" href="#id6">Точки и запетаи</a></li>
+<li><a class="reference internal" href="#id7">Компилиране</a></li>
+<li><a class="reference internal" href="#echo">Echo</a></li>
+</ul>
+</li>
+</ul>
+
+  <h4>Previous topic</h4>
+  <p class="topless"><a href="index.html"
+                        title="previous chapter">Въведение в Go</a></p>
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/go_tutorial.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li class="right" >
+          <a href="index.html" title="Въведение в Go"
+             >previous</a> |</li>
+        <li><a href="index.html">Въведение в Go 1.0a documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2012, Владимир Колев.
+      Created using <a href="http://sphinx.pocoo.org/">Sphinx</a> 1.1.2.
+    </div>
+  </body>
+</html>
