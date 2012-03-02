@@ -26,7 +26,7 @@
     <script type="text/javascript" src="_static/doctools.js"></script>
     <script type="text/javascript" src="_static/translations.js"></script>
     <link rel="top" title="Въведение в Go 1.0a документация" href="#" />
-    <link rel="next" title="Въведение в програмния език Go" href="go_tutorial.html" /> 
+    <link rel="next" title="Инсталиране на Go" href="install/index.html" /> 
   </head>
   <body>
     <div class="related">
@@ -36,7 +36,7 @@
           <a href="genindex.html" title="Общ индекс"
              accesskey="I">индекс</a></li>
         <li class="right" >
-          <a href="go_tutorial.html" title="Въведение в програмния език Go"
+          <a href="install/index.html" title="Инсталиране на Go"
              accesskey="N">напред</a> |</li>
         <li><a href="#">Въведение в Go 1.0a документация</a> &raquo;</li> 
       </ul>
@@ -50,10 +50,23 @@
   <div class="section" id="go">
 <h1>Въведение в Go<a class="headerlink" href="#go" title="Постоянна връзка до това заглавие">¶</a></h1>
 <img alt="_images/gopher.jpg" class="align-center" src="_images/gopher.jpg" />
+<p>Програмният език Go е проект с отворен код, имащ за цел да направи програмистите по-продуктивни</p>
+<p>Go е изразителен, сбит, чист и ефективен. Неговите конкурентни механизми правят лесно писането на програми, които
+използват максималното от много-ядрени и свързани в мрежа машини, като в същото време неговата оригинална типова
+система позволява гъвкава и модулна програмна конструкция. Go е бърз, статично писан, компилируем език, който дава
+усещането за динамично писан, интерпретируем език.</p>
 <div class="section" id="id1">
 <h2>Съдържание:<a class="headerlink" href="#id1" title="Постоянна връзка до това заглавие">¶</a></h2>
 <div class="toctree-wrapper compound">
 <ul>
+<li class="toctree-l1"><a class="reference internal" href="install/index.html">Инсталиране на Go</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="install/index.html#id1">Инсталиране</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install/index.html#id2">Въведение</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install/index.html#id3">Сдобиване с go инструментите</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install/index.html#id4">Инсталиране на go инструментите</a></li>
+<li class="toctree-l2"><a class="reference internal" href="install/index.html#id5">Тестване на инсталацията</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="go_tutorial.html">Въведение в програмния език Go</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="go_tutorial.html#id1">Предговор</a></li>
 <li class="toctree-l2"><a class="reference internal" href="go_tutorial.html#id5">Здравей свят</a></li>
@@ -72,43 +85,23 @@
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="effective_go.html">Ефективен Go</a><ul>
-<li class="toctree-l2"><a class="reference internal" href="effective_go.html#id1">Въведение</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="effective_go.html#id2">Примери</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="effective_go.html#id1">Въведение</a></li>
 <li class="toctree-l2"><a class="reference internal" href="effective_go.html#id3">Форматиране</a></li>
 <li class="toctree-l2"><a class="reference internal" href="effective_go.html#id4">Коментари</a></li>
-<li class="toctree-l2"><a class="reference internal" href="effective_go.html#id5">Имена</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="effective_go.html#id6">Имена на пакети</a></li>
-<li class="toctree-l3"><a class="reference internal" href="effective_go.html#getters">Getters</a></li>
-<li class="toctree-l3"><a class="reference internal" href="effective_go.html#id7">Имена на интерфейси</a></li>
-<li class="toctree-l3"><a class="reference internal" href="effective_go.html#id8">Миксирани главни</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="effective_go.html#id5">Имена</a></li>
 <li class="toctree-l2"><a class="reference internal" href="effective_go.html#id9">Точки и запетаи</a></li>
-<li class="toctree-l2"><a class="reference internal" href="effective_go.html#id10">Контролни структури</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="effective_go.html#if">If</a></li>
-<li class="toctree-l3"><a class="reference internal" href="effective_go.html#id11">Предеклариране</a></li>
-<li class="toctree-l3"><a class="reference internal" href="effective_go.html#for">For</a></li>
-<li class="toctree-l3"><a class="reference internal" href="effective_go.html#switch">Switch</a></li>
-</ul>
-</li>
+<li class="toctree-l2"><a class="reference internal" href="effective_go.html#id10">Контролни структури</a></li>
 <li class="toctree-l2"><a class="reference internal" href="effective_go.html#id12">Функции</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="how_to_write.html">Как да пишете Go код</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="how_to_write.html#id1">Въведение</a></li>
-<li class="toctree-l2"><a class="reference internal" href="how_to_write.html#id2">Ресурси на общността</a></li>
-<li class="toctree-l2"><a class="reference internal" href="how_to_write.html#id3">Създаване на нов пакет</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="how_to_write.html#id4">Избиране на път за вмъкване</a></li>
-<li class="toctree-l3"><a class="reference internal" href="how_to_write.html#go-gopath">go инструмента и GOPATH</a></li>
-<li class="toctree-l3"><a class="reference internal" href="how_to_write.html#id5">Go изходни файлове</a></li>
-</ul>
-</li>
-<li class="toctree-l2"><a class="reference internal" href="how_to_write.html#id6">Построяване на програми</a></li>
-<li class="toctree-l2"><a class="reference internal" href="how_to_write.html#id7">Тестване</a></li>
-<li class="toctree-l2"><a class="reference internal" href="how_to_write.html#id8">Примерен пакет с тестове</a></li>
-<li class="toctree-l2"><a class="reference internal" href="how_to_write.html#id9">Архитектурен и специфичен за операционната система код</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_write.html#id3">Ресурси на общността</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_write.html#id5">Създаване на нов пакет</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_write.html#id12">Построяване на програми</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_write.html#id13">Тестване</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_write.html#id16">Примерен пакет с тестове</a></li>
+<li class="toctree-l2"><a class="reference internal" href="how_to_write.html#id20">Архитектурен и специфичен за операционната система код</a></li>
 </ul>
 </li>
 </ul>
@@ -141,8 +134,8 @@
 </ul>
 
   <h4>Следваща тема</h4>
-  <p class="topless"><a href="go_tutorial.html"
-                        title="следваща глава">Въведение в програмния език Go</a></p>
+  <p class="topless"><a href="install/index.html"
+                        title="следваща глава">Инсталиране на Go</a></p>
   <h3>Тази страница</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/index.txt"
@@ -172,7 +165,7 @@
           <a href="genindex.html" title="Общ индекс"
              >индекс</a></li>
         <li class="right" >
-          <a href="go_tutorial.html" title="Въведение в програмния език Go"
+          <a href="install/index.html" title="Инсталиране на Go"
              >напред</a> |</li>
         <li><a href="#">Въведение в Go 1.0a документация</a> &raquo;</li> 
       </ul>
