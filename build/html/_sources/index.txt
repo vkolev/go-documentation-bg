@@ -6,12 +6,18 @@
 Въведение в Go
 ===============
 
+.. image:: _static/gopher.jpg
+    :align: center
+
 Съдържание:
+-----------
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    go_tutorial
+   effective_go
+   how_to_write
 
 
 
@@ -19,6 +25,5 @@
 ==================
 
 * :ref:`genindex`
-* :ref:`modindex`
 * :ref:`search`
 

@@ -25,6 +25,7 @@
     <script type="text/javascript" src="_static/underscore.js"></script>
     <script type="text/javascript" src="_static/doctools.js"></script>
     <link rel="top" title="Въведение в Go 1.0a documentation" href="index.html" />
+    <link rel="next" title="Ефективен Go" href="effective_go.html" />
     <link rel="prev" title="Въведение в Go" href="index.html" /> 
   </head>
   <body>
@@ -34,6 +35,9 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
+        <li class="right" >
+          <a href="effective_go.html" title="Ефективен Go"
+             accesskey="N">next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Въведение в Go"
              accesskey="P">previous</a> |</li>
@@ -151,6 +155,186 @@
 <span class="k">const</span> <span class="n">Newline</span> <span class="p">=</span> <span class="s">&quot;\n&quot;</span>
 </pre></div>
 </div>
+<p>Тази програма вмъква &#8220;os&#8221; пакета, за да има достъп до неговата <tt class="docutils literal"><span class="pre">Stdout</span></tt> променливата, от тип  <tt class="docutils literal"><span class="pre">*os.File</span></tt>.
+Заявката <tt class="docutils literal"><span class="pre">import</span></tt> е всъщност декларация: в своята основна форма, както е използвана в нашата &#8220;здравей свят&#8221; програма.
+Именува идентификатора (<tt class="docutils literal"><span class="pre">fmt</span></tt>), който ще бъде използван за достъп до членовете на пакета вмъкнат от (<tt class="docutils literal"><span class="pre">&quot;fmt&quot;</span></tt>)
+файла, който може да бъде намерен в настоящата директория или в стандартната локация. В тази програма, обаче, ние
+изпускаме изричното име от вмъкването; по подразбиране пакетите се вмъкват, използвайки име дефинирано от вмъквания
+пакет, което по условие е самото име на файла. Нашата &#8220;здравей свят&#8221; програма, можеше просто да казва
+<tt class="docutils literal"><span class="pre">import</span> <span class="pre">&quot;fmt&quot;</span></tt>.</p>
+<p>Можете да определяте собствени имена за вмъквания ако поискате, но това е необходимо само ако искате да избегнете
+конфликт с именуване.</p>
+<p>Имайки <tt class="docutils literal"><span class="pre">os.Stdout</span></tt>, можем да използваме неговия <tt class="docutils literal"><span class="pre">WriteString</span></tt> метод, за да принтираме низа.</p>
+<p>След като вмъкнем <tt class="docutils literal"><span class="pre">flag</span></tt> пакета, можем да използваме <tt class="docutils literal"><span class="pre">var</span></tt> декларацията, за да инициализираме глобална променлива,
+наречена <tt class="docutils literal"><span class="pre">omitNewline</span></tt>, която да съдържа стойността на <tt class="docutils literal"><span class="pre">-n</span></tt> флага на echo. Променливата е от тип <tt class="docutils literal"><span class="pre">*bool</span></tt>,
+показател към <tt class="docutils literal"><span class="pre">bool</span></tt>.</p>
+<p>В <tt class="docutils literal"><span class="pre">main.main</span></tt> правим разбор на аргументите (извикването на <tt class="docutils literal"><span class="pre">flag.Parse</span></tt>) и след това създаваме локална низова
+променлива, с която да създадем изхода.</p>
+<p>Декларационната заявка има формата</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">var</span> <span class="n">s</span> <span class="nb">string</span> <span class="p">=</span> <span class="s">&quot;&quot;</span>
+</pre></div>
+</div>
+<p>Това е ключовата дума <tt class="docutils literal"><span class="pre">var</span></tt>, последвана от името на променливата, последвана от нейния тип, последван от знакът
+равно и първоначалната стойност на променливата.</p>
+<p>Go се опитва да бъде сбит и тази декларация може да бъде съкратена. Тъй като низовата константа е от тип низ, не е
+необходимо да казваме това на компилатора. Можем да напишем:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">var</span> <span class="n">s</span> <span class="p">=</span> <span class="s">&quot;&quot;</span>
+</pre></div>
+</div>
+<p>Дори можем да бъдем още по-кратки, използвайки идиома</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="n">s</span> <span class="p">:=</span> <span class="s">&quot;&quot;</span>
+</pre></div>
+</div>
+<p>Операторът <tt class="docutils literal"><span class="pre">:=</span></tt> се използва много често в Go, за да представи инициализираща декларация. Има такъв в следващия
+ред във <tt class="docutils literal"><span class="pre">for</span></tt> клаузата:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">for</span> <span class="n">i</span> <span class="p">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="n">flag</span><span class="p">.</span><span class="n">NArg</span><span class="p">();</span> <span class="n">i</span><span class="p">++</span> <span class="p">{</span>
+</pre></div>
+</div>
+<p>Пакетът <tt class="docutils literal"><span class="pre">flag</span></tt> е направил разбор на аргументите и е поставил не-flag аргументите в списък, който може да бъде
+обходем по очевидия начин.</p>
+<p>Заявката <tt class="docutils literal"><span class="pre">for</span></tt> в Go се различава от тази в C по много причини. Първо, това е единствения цикъл, няма <tt class="docutils literal"><span class="pre">while</span></tt> или
+<tt class="docutils literal"><span class="pre">do</span></tt>. Второ, няма скоби в клаузата, но къдравите скоби в тялото са задължителни. Същото важи и за <tt class="docutils literal"><span class="pre">if</span></tt> и
+<tt class="docutils literal"><span class="pre">switch</span></tt> заявките. По-късни примери ще покажат други начини как може да бъде написан <tt class="docutils literal"><span class="pre">for</span></tt> цикъл.</p>
+<p>Тялото на цикъла попълва низът <tt class="docutils literal"><span class="pre">s</span></tt>, добавяйки (използвайки <tt class="docutils literal"><span class="pre">+=</span></tt>) аргументите и отделящите шпации. След цикъла, ако
+<tt class="docutils literal"><span class="pre">-n</span></tt> флагът липсва, програмата добавя нов ред. Накрая изписва резултата.</p>
+<p>Забележете, че <tt class="docutils literal"><span class="pre">main.main</span></tt> е функция без аргументи. Дефинирана е по този начин. Стигайки краят на <tt class="docutils literal"><span class="pre">main.main</span></tt>
+означава &#8220;успех&#8221;; ако искате да сигнализирате грешен изход можете да извикате</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="n">os</span><span class="p">.</span><span class="n">Exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Пакетът <tt class="docutils literal"><span class="pre">os</span></tt> съдържа и други съществени елементи; на пример, <tt class="docutils literal"><span class="pre">os.Args</span></tt> е част, използвана от <tt class="docutils literal"><span class="pre">flag</span></tt> пакета за
+достъп до аргументите в командния ред.</p>
+</div>
+<div class="section" id="id8">
+<h2>Антракт относно типове<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h2>
+<p>Go има някои познати типове като <tt class="docutils literal"><span class="pre">int</span></tt> и <tt class="docutils literal"><span class="pre">uint</span></tt> (unsigned int), които представляват стойности от &#8220;посходящ&#8221; размер
+за машината. Също така дефинира и изрично-ограничени типове като <tt class="docutils literal"><span class="pre">int8</span></tt>, <tt class="docutils literal"><span class="pre">float64</span></tt> и т.н., плюс неподписани типове
+като <tt class="docutils literal"><span class="pre">uint</span></tt>, <tt class="docutils literal"><span class="pre">uint32</span></tt> и други. Това са различни типове, дори ако <tt class="docutils literal"><span class="pre">int</span></tt> и <tt class="docutils literal"><span class="pre">int32</span></tt> са с размер от 32 бита, те
+са различни типове. Същестува и <tt class="docutils literal"><span class="pre">byte</span></tt> синоним за <tt class="docutils literal"><span class="pre">uint8</span></tt>, който е тип елемент за низове.</p>
+<p>Типове с плаваща запетая са винаги оразмерени: <tt class="docutils literal"><span class="pre">float32</span></tt> и <tt class="docutils literal"><span class="pre">float64</span></tt>, плюс <tt class="docutils literal"><span class="pre">complex64</span></tt> (два <tt class="docutils literal"><span class="pre">float32</span></tt>) и
+<tt class="docutils literal"><span class="pre">complex128</span></tt> (два <tt class="docutils literal"><span class="pre">float64</span></tt>). Комплексните числа са извън предмета на урока.</p>
+<p>Говорейки за <tt class="docutils literal"><span class="pre">string</span></tt>, това също е вграден тип. Низовете са <em>неизменими променливи</em> - те не са просто масиви от
+<tt class="docutils literal"><span class="pre">byte</span></tt> стойности. След като веднъж сте построили низова <em>стойност</em>, можете да я промените, въпреки че, разбира се,
+можете да промените низова <em>променлива</em> като просто я превъзложите. Изрезката код от <tt class="docutils literal"><span class="pre">strings.go</span></tt> е легален код:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="n">s</span> <span class="p">:=</span> <span class="s">&quot;hello&quot;</span>
+<span class="k">if</span> <span class="n">s</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="p">!=</span> <span class="sc">&#39;e&#39;</span> <span class="p">{</span>
+    <span class="n">os</span><span class="p">.</span><span class="n">Exit</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="n">s</span> <span class="p">=</span> <span class="s">&quot;good bye&quot;</span>
+<span class="k">var</span> <span class="n">p</span> <span class="p">*</span><span class="nb">string</span> <span class="p">=</span> <span class="p">&amp;</span><span class="n">s</span>
+<span class="p">*</span><span class="n">p</span> <span class="p">=</span> <span class="s">&quot;ciao&quot;</span>
+</pre></div>
+</div>
+<p>Обаче следните заявки са нелегални, защото ще променят <tt class="docutils literal"><span class="pre">string</span></tt> стойността:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="n">s</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">=</span> <span class="sc">&#39;x&#39;</span>
+<span class="p">(*</span><span class="n">p</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="p">=</span> <span class="sc">&#39;y&#39;</span>
+</pre></div>
+</div>
+<p>Според C++ определението, низовете в Go са като <tt class="docutils literal"><span class="pre">const</span> <span class="pre">strings</span></tt>, докато показателите към низовете са аналогични на
+референции към <tt class="docutils literal"><span class="pre">const</span> <span class="pre">string</span></tt>.</p>
+<p>Да има показатели. Въпреки това Go опростява тяхното използване; прочетете нататък.</p>
+<p>Масивите се декларират така:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">var</span> <span class="n">arrayOfInt</span> <span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="nb">int</span>
+</pre></div>
+</div>
+<p>Масивите, както низовете, са стойности, но те са непостоянни. Това се различава от C, където arrayOfInt ще бъде
+използван като показател към <tt class="docutils literal"><span class="pre">int</span></tt>. В Go, тъй като масивите са стойности, е смислено (и полезно) да се говори
+за показатели към масиви.</p>
+<p>Размерът на масива е част от неговия тип; въпреки това е допустимо да се декларира <em>изрязана</em> променлива, която да
+съдържа референция към който и да е масив, от всякакъв размер, със същия тип елементи. <em>Изрязващ израз</em> има
+формата <tt class="docutils literal"><span class="pre">a[low</span> <span class="pre">:</span> <span class="pre">high]</span></tt>, представляващ вътрешен масив, индексиран от <tt class="docutils literal"><span class="pre">low</span></tt> до <tt class="docutils literal"><span class="pre">high-1</span></tt>; крайната изрезка
+е индексирана от 0 до <tt class="docutils literal"><span class="pre">high-low-1</span></tt>. На кратко, изрезките приличат на масиви, но нямат изричен размер(<tt class="docutils literal"><span class="pre">[]</span></tt> срещу
+<tt class="docutils literal"><span class="pre">[10]</span></tt>) и те представят сегмент от подстоящия, обикновено анонимен, нормален масив. многобройи изрезки могат
+да споделят данни ако представляват един и същи масив; многобройни масиви не могат никога да споделят данни.</p>
+<p>Изрезките са по-често срещани в Go, отколкото нормални масиви; те са по-гъвкави, имат семантични връзки и са
+ефективни. Това което им липсва е прецизния контрол на макет за записване както при обикновените масиви; ако
+искате да имате стотина елемента от масив записвани във вашата структура, трябва да използвате нормален масив.
+За да създадете такъв, използвайте <em>конструктор</em> на съединителна стойност - израз формиран от типа, следван от израз
+ограден в къдрави скоби както в следния пример:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="nb">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>В този случай конструктора създава масив от 3 цифри (<tt class="docutils literal"><span class="pre">int</span></tt>).</p>
+<p>Когато подавате масив към функция, почти винаги ще искате да декларирате формалния параметър като изрезка. Когато
+извикате функцията, изрежете масива, за да създадете (ефикасна) свързана изрезка и подайте нея. По подразбиране
+горния и долния край на изрезка отговарят на краищата на съществуващия обект, така сбитата нотация <tt class="docutils literal"><span class="pre">[:]</span></tt> ще
+изреже целия масив:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">func</span> <span class="n">sum</span><span class="p">(</span><span class="n">a</span> <span class="p">[]</span><span class="nb">int</span><span class="p">)</span> <span class="nb">int</span> <span class="p">{</span> <span class="c1">// връща число</span>
+    <span class="n">s</span> <span class="p">:=</span> <span class="mi">0</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="p">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">);</span> <span class="n">i</span><span class="p">++</span> <span class="p">{</span>
+        <span class="n">s</span> <span class="p">+=</span> <span class="n">a</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">s</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+<p>Забележете как типът (int) на връщаната стойност бива дефиниран за <tt class="docutils literal"><span class="pre">sum</span></tt>, заявявайки го след списъка с параметри.</p>
+<p>За да извикаме функцията, изрязваме масива. Този код (ще покажем по-просто начин след малко) създава масив и го
+изрязва:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="n">x</span> <span class="p">:=</span> <span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="nb">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
+<span class="n">s</span> <span class="p">:=</span> <span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">[:])</span>
+</pre></div>
+</div>
+<p>Ако създавате обикновен масив, но искате компилатора да преброи елементите за вас, използвайте <tt class="docutils literal"><span class="pre">...</span></tt> като размер
+на масива.</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="n">x</span> <span class="p">:=</span> <span class="p">[...]</span><span class="nb">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">}</span>
+<span class="n">s</span> <span class="p">:=</span> <span class="n">sum</span><span class="p">(</span><span class="n">x</span><span class="p">[:])</span>
+</pre></div>
+</div>
+<p>Но това е по-объркано от необходимото. В практиката, освен ако не сте педантични относно начина на записване в
+структурата от данни, изрезката сама - използвайки празни скоби без размер - е всичко, от което се нуждаете:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="n">s</span> <span class="p">:=</span> <span class="n">sum</span><span class="p">([]</span><span class="nb">int</span><span class="p">{</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">})</span>
+</pre></div>
+</div>
+<p>Съществуват също така и карти, които могат да бъдат инициализирани така:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="n">m</span> <span class="p">:=</span> <span class="k">map</span><span class="p">[</span><span class="nb">string</span><span class="p">]</span><span class="nb">int</span><span class="p">{</span><span class="s">&quot;one&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="s">&quot;two&quot;</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>Вградената функция <tt class="docutils literal"><span class="pre">len</span></tt>, която връща броят елементи, се появява за първи път в <tt class="docutils literal"><span class="pre">sum</span></tt>. Работи над низове, масиви,
+изрезки, карти и канали.</p>
+<p>Между другото друго нещо, което работи над низове, масиви, изрезки, карти и канали е <tt class="docutils literal"><span class="pre">range</span></tt> клаузата в <tt class="docutils literal"><span class="pre">for</span></tt>
+цикли. Вместо да пишете</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">for</span> <span class="n">i</span> <span class="p">:=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="p">&lt;</span> <span class="nb">len</span><span class="p">(</span><span class="n">a</span><span class="p">);</span> <span class="n">i</span><span class="p">++</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+</pre></div>
+</div>
+<p>за да обходите елементите на изрезка (или карта, или ...) можете да напишете:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">v</span> <span class="p">:=</span> <span class="k">range</span><span class="p">(</span><span class="n">a</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">}</span>
+</pre></div>
+</div>
+<p>Това задава <tt class="docutils literal"><span class="pre">i</span></tt> към индексът и <tt class="docutils literal"><span class="pre">v</span></tt> към стойността на следващите елемнти от целта на обхвата.
+Виж <a class="reference internal" href="effective_go.html"><em>Ефективен Go</em></a> за повече примери.</p>
+</div>
+<div class="section" id="id9">
+<h2>Антракт относно алокация<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h2>
+<p>Повечето типове в Go са стойности. Ако имате <tt class="docutils literal"><span class="pre">int</span></tt> или <tt class="docutils literal"><span class="pre">struct</span></tt> или някакъв масив, предаването копира съдържанието
+на обекта. За да разпределите нова променлива, използвайте вградената функция <tt class="docutils literal"><span class="pre">new</span></tt>, която връща показател
+към разпределеното хранилище.</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">type</span> <span class="n">T</span> <span class="k">struct</span> <span class="p">{</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span> <span class="nb">int</span><span class="p">}</span>
+<span class="k">var</span> <span class="n">t</span> <span class="p">*</span><span class="n">T</span> <span class="p">=</span> <span class="nb">new</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>или по-идиоматичното</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="n">t</span> <span class="p">:=</span> <span class="nb">new</span><span class="p">(</span><span class="n">T</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Някои типове - карти, изрезки и канали (виж по-долу) - имат свързана семантика. Ако държите изрезка или карта и искате
+да промените техното съдържание, други променливи, които референсират същите данни ще видят промяната. За тези три
+типа искате да използвате вградената функция, <tt class="docutils literal"><span class="pre">make</span></tt>:</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="n">m</span> <span class="p">:=</span> <span class="nb">make</span><span class="p">(</span><span class="k">map</span><span class="p">[</span><span class="nb">string</span><span class="p">]</span><span class="nb">int</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Тази заявка инициализира нова карта, готова да съдържа елементи. Ако просто декларирате картата, какво в</p>
+<div class="highlight-go"><div class="highlight"><pre><span class="k">var</span> <span class="n">m</span> <span class="k">map</span><span class="p">[</span><span class="nb">string</span><span class="p">]</span><span class="nb">int</span>
+</pre></div>
+</div>
+<p>създава <tt class="docutils literal"><span class="pre">nil</span></tt> референция, която не може да съдържа нищо. За да използвате картата, първо трябва да инициализирате
+връзката, използвайки <tt class="docutils literal"><span class="pre">make</span></tt> или като зададате вече съществуваща карта.</p>
+<p>Забележете, че <tt class="docutils literal"><span class="pre">new(T)</span></tt> връща тип <tt class="docutils literal"><span class="pre">*T</span></tt>, докато <tt class="docutils literal"><span class="pre">make(T)</span></tt> връща тип <tt class="docutils literal"><span class="pre">T</span></tt>. Ако (по погрешка) разпределите свързан
+обект с <tt class="docutils literal"><span class="pre">new</span></tt> вместо <tt class="docutils literal"><span class="pre">make</span></tt>, ще получите показател към <tt class="docutils literal"><span class="pre">nil</span></tt> връзка, еквивалентно на това да декларирате
+неинициализирана променлива и да вземете нейния адрес.</p>
+</div>
+<div class="section" id="id10">
+<h2>Антракт към константи<a class="headerlink" href="#id10" title="Permalink to this headline">¶</a></h2>
 </div>
 </div>
 
@@ -168,6 +352,9 @@
 <li><a class="reference internal" href="#id6">Точки и запетаи</a></li>
 <li><a class="reference internal" href="#id7">Компилиране</a></li>
 <li><a class="reference internal" href="#echo">Echo</a></li>
+<li><a class="reference internal" href="#id8">Антракт относно типове</a></li>
+<li><a class="reference internal" href="#id9">Антракт относно алокация</a></li>
+<li><a class="reference internal" href="#id10">Антракт към константи</a></li>
 </ul>
 </li>
 </ul>
@@ -175,6 +362,9 @@
   <h4>Previous topic</h4>
   <p class="topless"><a href="index.html"
                         title="previous chapter">Въведение в Go</a></p>
+  <h4>Next topic</h4>
+  <p class="topless"><a href="effective_go.html"
+                        title="next chapter">Ефективен Go</a></p>
   <h3>This Page</h3>
   <ul class="this-page-menu">
     <li><a href="_sources/go_tutorial.txt"
@@ -203,6 +393,9 @@
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
+        <li class="right" >
+          <a href="effective_go.html" title="Ефективен Go"
+             >next</a> |</li>
         <li class="right" >
           <a href="index.html" title="Въведение в Go"
              >previous</a> |</li>
